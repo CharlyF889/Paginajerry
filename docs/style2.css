@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
+
+* {
+    box-sizing: border-box;
+    font-family: "Raleway";
+    color: black;
+
+}
+
+header {
+    margin-bottom: 10em;
+}
+
+.nav-badge {
+    position: relative;
+    top: 22px;
+    right: 18px;
+}
+
+.mainlogo{
+    max-width: 3.6em !important;
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+
+}
+
+.nav-wrapper{
+    min-height: 10em !important;
+}
+
+
+.menu{
+    font-size: 3rem !important;
+    left: 0.4em !important;
+}
+
+.user-view{
+    background: url(Images/cowbackground.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.sidenav-footer{
+    font-size: 1em !important;
+}
+
+.sidenav{
+    min-width: 5vw !important;
+}
+
+.sidenav a{
+    font-size: 1.5em !important;
+}
+
+
+.imgsidenav{
+    height:  150px !important;
+    border-radius: 60%;
+}
+
+.sidenav-media{
+    top: 0.4em;
+    right: 5em;
+}
+
+.sidenav-cart{
+    position: relative !important;
+    left: 2em;
+}
+
+.sidenav-badge{
+    left: 6.5em;
+    top: 1em;
+
+}
+
+.cart-mobile{
+    min-height: 3.5em !important;
+    min-width: 3.5em !important;
+    right: 3em !important;
+}
+.cart-mobile1{
+    font-size: 1.6em !important;
+}
+.cart-desktop{
+    font-size: 2.3em !important;
+}
+
+.cart1{
+    font-size:  2.5em !important;
+    position: relative !important;
+    left: .04em
+
+}
+
+.row1 > div{
+    padding: 10px;
+    margin: 20px 30px 10px 10px;
+    background: rgb(241, 240, 240);
+    line-height: 90px;
+}
+
+
+.btn1{
+    margin-bottom: 10px;
+    border: 1px solid gray;
+}
+
+section{
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+}
+
+.tabs .indicator{
+    background-color: #1a237e;
+}
+.tabs .tab a:focus, .tabs .tab a:focus.active{
+    background: transparent;
+}
+
+.parallax{
+    max-height: 400px;
+}
+
+.mediaicon{
+    right:20px;
+    margin-bottom: 12px;
+    margin-top: 10px;
+}
+
+
+
+.footer-copyright{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 15px;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .slides {
+        height: 250px !important;
+    }
+    .slider {
+        height: 300px !important;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .slides {
+        height: 250px !important;
+    }
+    .slider {
+        height: 300px !important;
+    }
+}
+
+
+.modal-trigger{
+    margin-top: 2em;
+    margin-bottom: 1em;
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <title>Productos Jerry |TIENDA</title>
         <meta name="description" content="Quesos">
@@ -7,8 +7,8 @@
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/2a8fc56a4a.js" crossorigin="anonymous"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable=yes/>
+        <script src="https://kit.fontawesome.com/2a8fc56a4a.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <header>
@@ -90,13 +90,10 @@
                     </li>
 
                 </div>
-                <div class="footer-copyright grey darken-4 sidenav-footer">
-                    <div class="container center-align white-text">&copy; 2020 Productos Jerry</div>
                 </div>
             </ul>
         </div>    
         </header>
-
         <section class="container section">
             <div class="slider">
                 <ul class="slides">
@@ -118,20 +115,29 @@
             </div>
         </section>
 
+        <div class="section">
+            <div class="container">
+                <h4>PRODUCTOS MAZAMITLA</h4>
+                <div class="row row1" id="geeks">
+
+                </div>
+            </div>
+        </div>
+
         <section>
         <div class="container section">
             <h2>Productos Mazamitla</h2>
 
             <div class="row row1">
-                <div class="col s4 m4 l4 z-depth-2">
+                <div class="col s3 m4 l5 z-depth-2">
                     <div class="card">
-                        <div class="card-image materialboxed">
-                            <img src="Images/back.jpg">
+                        <div class="card-image">
+                            <img class="" src="Images/1.png">
                             <a href="#" class="btn-floating teal  halfway-fab"><i class="material-icons">add_shopping_cart</i></a>
                         </div>
                     </div>
                     <div class="card-content">
-                        <span class="card-item center">Panela Natural 700g.</span>
+                        <span class="card-item center ">Panela Natural 700g.</span>
                     </div>
                     <div class="card-action">
                         <a href="#"><i class="material-icons right">add_circle_outline</i></a>
@@ -142,70 +148,27 @@
                         </button>
                     </div>
                 </div>
-                <div class="col s4 m4 l4 z-depth-2">
-                    <div class="card">
-                        <div class="card-image materialboxed">
-                            <img src="Images/back.jpg">
-                            <a href="#" class="btn-floating pink pulse halfway-fab"><i class="material-icons">favorite</i></a>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <span class="card-item center">Panela Natural 700g.</span>
-                    </div>
-                    <div class="card-action">
-                        <a href="#"><i class="material-icons brown lighten-1 right">exposure_plus_1</i></a>
-                        <button class="btn-medium blue-text white left btn1">
-                            <a href="#"><i class="material-icons">shopping_cart</i></a>
-                        <a href="#">Agregar al Carrito</a>
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <div class="container">
-        <h2>Productos Mazamitla</h2>
-
-        <div class="row">
-            <div class="col s6 l3 z-depth-2">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="Images/back.jpg">
-                        <a href="#" class="btn-floating pink pulse halfway-fab"><i class="material-icons">favorite</i></a>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <span class="card-item center">Panela Natural 700g.</span>
-                </div>
-                <div class="card-action">
-                    <a href="#"><i class="material-icons brown lighten-3 box right">exposure_plus_1</i></a>
-                    <button class="btn-medium blue-text white left btn1">
-                        <a href="#"><i class="material-icons">shopping_cart</i></a>
-                    <a href="#">Agregar al Carrito</a>
-                    </button>
-                </div>
-            </div>
-            <div class="col s6 l3 z-depth-2">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="Images/back.jpg">
-                        <a href="#" class="btn-floating pink pulse halfway-fab"><i class="material-icons">favorite</i></a>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <span class="card-item center">Panela Natural 700g.</span>
-                </div>
-                <div class="card-action">
-                    <a href="#"><i class="material-icons brown lighten-3 box right">exposure_plus_1</i></a>
-                    <button class="btn-medium blue-text white left btn1">
-                        <a href="#"><i class="material-icons">shopping_cart</i></a>
-                    <a href="#">Agregar al Carrito</a>
-                    </button>
-                </div>
-            </div>
+    <section class="container content-section">
+        <h2 class="section-header">Carrito</h2>
+        <div class="cart-row">
+            <span class="cart-header cart-column cart-item">Articulo</span>
+            <span class="cart-header cart-column cart-price">Precio</span>
+            <span class="cart-header cart-column cart-quantity">Cantidad</span>
         </div>
-    </div>
+        <div class="cart-items">
+        </div>
+        <div class="cart-total">
+            <strong class="cart-total-title">Total</strong>
+            <span class="cart-total-price">$0.00</span>
+        </div>
+        <button class="btn btn-primary btn-purchase" type="button">Comprar</button>
+
+    </section>
+
 
     <div class="scrollspy" id="carrito">
         <h2 class="carrito">CARRITO</h2>
@@ -233,7 +196,7 @@
                                         <li><a href="providers.html" class="waves-effect waves-light black-text">REGISTRASRE</a></li>
                                         <li><a href="index.html"
                                             class="waves-effect waves-light black-text">TIENDA</a></li>
-                                        <li><a href="about.html" class="waves-effect waves-light black-text">ACERCA</a></li>
+                                        <li><a href="about.html" class="waves-effect waves-light black-text">SOBRE NOSOTROS</a></li>
                                     </div>
                                     <div class="col s3">
                                         <br>
@@ -259,8 +222,8 @@
                             </div>
                         </footer>
                         <!-- Compiled and minified JavaScript -->
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-                        <script src="java.js"></script>
-                        <script src="store.js" async></script>
-                    </body>
-                </html>
+                <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+                <script defer src="java.js"></script>
+                <script defer src="store.js"></script>
+            </body>
+        </html>

@@ -1,0 +1,42 @@
+{
+    "productos": [
+        {
+            "id": "1",
+            "name": "Panela Natural 700g.",
+            "price": "8000",
+            "imgName": "1.png"
+        },
+        {
+            "id": "2",
+            "name": "Panela Rajas 500g.",
+            "price": "6000",
+            "imgName": "2.png"
+        },
+        {
+            "id": "3",
+            "name": "Oaxaca 500g.",
+            "price": "7000",
+            "imgName": "3.png"
+        },
+        {
+            "id": "4",
+            "name": "Adobera de Fundir 1.2 Kg.",
+            "price": "11500",
+            "imgName": "4.png"
+        }
+    ],
+    "postres": [
+        {
+            "id": "5",
+            "name": "Pay de Queso",
+            "price": "12000",
+            "imgName": "1.png"
+        },
+        {
+            "id": "6",
+            "name": "Brownies",
+            "price": "2000",
+            "imgName": "2.png"
+        }
+    ]
+}

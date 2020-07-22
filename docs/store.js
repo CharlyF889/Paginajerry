@@ -24,34 +24,22 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                     <div class="card-content">
-                        <div class="card-item"><p>` + info[i].name + `</p></div>
-                <div class="card-action">
-                    <div class="input-field valign-wrapper">
-                    <input type="number" value="1" id="quantity" class="center"><span>piezas</span>
-                    </div>
-                        <button class="btn-medium black-text orange right btn1 shop-item-button">
-                            <a href="#"><i class="material-icons">shopping_cart</i></a>
-                        <a href="#">Agregar</a>
-                        </button>
-                    </div>
-                </div>
-
+                        <div class="card-item"><p>` + info[i].name + `</p></div></div>
+                    <div class="card-action">
+                        <div class="input-field valign-wrapper">
+                        <input type="number" value="1" id="quantity" class="center"><span>piezas</span>
+                        </div>
+                            <button class="btn-medium black-text orange right btn1 shop-item-button valign-wrapper">
+                                <a href="#"><i class="material-icons">shopping_cart</i></a>
+                            <a class="black-text" href="#">Agregar</a>
+                            </button>
+                        </div>
         </div>`;
 
         }
 
         document.getElementById("geeks").innerHTML = text;
-
-
-
-        // info.forEach(element => {
-
-        //     block.innerHTML = id + "  " + name;
-        //     console.log(block);
-        //     container.appendChild(block);
-        //     }
-        
-    ;
+    
 })})
 
 if(document.readyState == 'loading') {
@@ -141,7 +129,9 @@ function addItemToCart(title, price, imageSrc){
     cartRow.innerHTML = cartRowContents
     cartItems.append(cartRow)
     cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
+    
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
+    getElementsById('quantity').addEventListener('change',  )
 }
 
 function updateCartTotal() {

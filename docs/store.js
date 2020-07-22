@@ -24,14 +24,12 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                     <div class="card-content">
-                        <span class="card-item center"></span>` + info[i].name + `</span></div>
+                        <span class="card-item"></span>` + info[i].name + `</span></div>
                 <div class="card-action">
-                    <div class="input-field">
-                    <input type="number" value="1" id="quantity">
-                    <a href="#"><i class="material-icons right">arrow_drop_down</i></a>
-                        <a href="#"><i class="material-icons right">arrow_drop_up</i></a>
+                    <div class="input-field valign-wrapper">
+                    <input type="number" value="1" id="quantity" class="center"><span>piezas</span>
                     </div>
-                        <button class="btn-medium black-text orange left btn1 shop-item-button">
+                        <button class="btn-medium black-text orange right btn1 shop-item-button">
                             <a href="#"><i class="material-icons">shopping_cart</i></a>
                         <a href="#">Agregar</a>
                         </button>

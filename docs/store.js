@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                     <div class="card-content">
-                        <span class="card-item"></span>` + info[i].name + `</span></div>
+                        <div class="card-item"><p>` + info[i].name + `</p></div>
                 <div class="card-action">
                     <div class="input-field valign-wrapper">
                     <input type="number" value="1" id="quantity" class="center"><span>piezas</span>

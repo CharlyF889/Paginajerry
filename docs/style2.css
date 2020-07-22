@@ -19,13 +19,13 @@ header {
 
 .mainlogo{
     max-width: 3.6em !important;
-    margin-left: 0.3em;
-    margin-right: 0.3em;
+    margin-right: 1em;
 
 }
 
 .nav-wrapper{
     min-height: 10em !important;
+    background-color: rgba(243, 224, 52, 0.15);
 }
 
 
@@ -89,15 +89,15 @@ header {
 .cart1{
     font-size:  2.5em !important;
     position: relative !important;
-    left: .04em
+    left: 0em;
 
 }
 
 .row1 > div{
-    padding: 10px;
-    margin: 20px 30px 10px 10px;
+    padding: 20px;
+    margin: 5px 20px 20px 5px;
     background: rgb(241, 240, 240);
-    line-height: 90px;
+    line-height: 5vw;
 }
 
 
@@ -107,8 +107,8 @@ header {
 }
 
 section{
-    padding-top: 2vw;
-    padding-bottom: 2vw;
+
+    padding-bottom: 0.3vh;
 }
 
 .tabs .indicator{
@@ -148,10 +148,10 @@ section{
 
 @media only screen and (min-width: 600px) {
     .slides {
-        height: 250px !important;
+        height: 200px !important;
     }
     .slider {
-        height: 300px !important;
+        height: 250px !important;
     }
 }
 
@@ -159,4 +159,10 @@ section{
 .modal-trigger{
     margin-top: 2em;
     margin-bottom: 1em;
+}
+
+.storeimg{
+    max-height: 18vh;
+    max-width: 19vh;
+    margin-bottom: 25px;
 }

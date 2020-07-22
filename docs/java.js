@@ -2,6 +2,8 @@
     document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems);
+    var instance = M.Sidenav.getInstance(elem);
+
     })
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -14,7 +16,7 @@
       var elems = document.querySelectorAll('.materialboxed');
       var instances = M.Materialbox.init(elems);
       var instance = M.Materialbox.getInstance(elems);
-
+      
     });
 
     document.addEventListener('DOMContentLoaded', function() {

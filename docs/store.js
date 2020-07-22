@@ -16,30 +16,42 @@ document.addEventListener('DOMContentLoaded', function() {
         var i;
         for (i= 0; i < info.length; i++) {
             text += `
-                <div class="col s5 m3  z-depth-2">
-                    <div class="card">
-                        <div class="card-image">
-                            <img class="responsive-image storeimg" src="Images/` + info[i].imgName + `">
-                            <a href="#" class="btn-floating yellow black-text  halfway-fab center">$` + (info[i].price/100) + `</a>
-                        </div>
+            <div class="col s5 m5  z-depth-2">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="responsive-image storeimg" src="Images/` + info[i].imgName + `">
+                        <a href="#" class="btn-floating yellow black-text  halfway-fab center">$` + (info[i].price/100) + `</a>
                     </div>
-                    <div class="card-content">
-                        <div class="card-item"><p>` + info[i].name + `</p></div></div>
+                    </div>
+                <div class="card-content">
+                    <div class="card-item">` + info[i].name + `</div>
+                    <div class="valign-wrapper row">
+                        <div class="col s6"><input type="number" value="1" id="quantity" class="input-field center">
+                        </div>
+                        <div class="col s2 pull-s2">
+                            <div class="box">
+                            <ul>
+                            <li><a href="#"><i class="material-icons">arrow_drop_up</i></a></li>
+                            <li><a href="#"><i class="material-icons">arrow_drop_down</i></a></li></ul></div>
+                        </div>
+                        <div class="col s3 pull-s2">piezas</div>
+                    </div>
+                </div>
                     <div class="card-action">
-                        <div class="input-field valign-wrapper">
-                        <input type="number" value="1" id="quantity" class="center"><span>piezas</span>
-                        </div>
-                            <button class="btn-medium black-text orange right btn1 shop-item-button valign-wrapper">
-                                <a href="#"><i class="material-icons">shopping_cart</i></a>
-                            <a class="black-text" href="#">Agregar</a>
-                            </button>
-                        </div>
-        </div>`;
+                        <button class="btn-medium black-text orange right btn1 shop-item-button valign-wrapper">
+                            <a href="#"><i class="material-icons">shopping_cart</i></a>
+                        <a class="black-text" href="#">Agregar</a>
+                        </button>
+                    </div>
+                    </div>
+            </div>`;
 
         }
 
         document.getElementById("geeks").innerHTML = text;
-    
+        
+
+
 })})
 
 if(document.readyState == 'loading') {

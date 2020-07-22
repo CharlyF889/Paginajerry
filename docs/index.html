@@ -22,11 +22,7 @@
                         <i class="material-icons menu">menu</i>
                         </a>
 
-                    <div class="row">
-                        <div class="col s2 offset-s2">
 
-                        </div>
-                    </div>
                     <ul class="right hide-on-med-and-down flow-text">
                         <li><a href="home.html" class="waves-effect waves-light orange-text flow-text">INICIAR SESIÓN</a></li>
                         <li><a href="providers.html" class="waves-effect waves-light orange-text flow-text">REGISTRARSE</a></li>
@@ -34,35 +30,40 @@
                         class="waves-effect waves-light orange-text flow-text">TIENDA</a></li>
                         <li><a href="about.html" class="waves-effect waves-light orange-text flow-text">ACERCA</a></li>
                         <li><a href="#carrito" class=
-                        "btn-large btn-floating blue darken-4 z-depth-2 tooltipped pulse tooltip-blue" data-tooltip="Este es el carrito.">
+                        "btn-medium btn-floating blue darken-4 z-depth-2 tooltipped pulse tooltip-blue" data-tooltip="Este es el carrito.">
                         <i class="material-icons cart-desktop">shopping_cart</i></a></li>
                         <li><span class="badge nav-badge white-text blue lighten-1 new">5</span></li>
                     </ul>
                 </div>
                 <a href="#carrito" class=
-                "btn-large btn-floating halfway-fab blue darken-4 z-depth-2 pulse show-on-med-and-down hide-on-large-only cart-mobile right">
-                <i class="material-icons cart1">shopping_cart</i></a>
+                "btn-medium btn-floating halfway-fab orange darken-2 z-depth-2 pulse show-on-med-and-down hide-on-large-only cart-mobile right">
+                <i class="material-icons cart1 ">shopping_cart</i></a>
                 </div>
             </nav>
         </div>
 
         <ul id="slide-out" class="sidenav">
             <div class="user-view">
+                <a href="#" class="sidenav-close">
                 <i class="material-icons">close</i>
-                <div class="center">
+                <div class="center"></a>
                     <img class="imgsidenav responsive-img" src="Images/Logo Jerry.jpg">
                 </div>
             </div>
             <br>
-            <li><a href="home.html" class="waves-effect waves-light">INCIAR SESIÓN</a></li>
-            <li><a class="waves-effect waves-light" href="providers.html">FINALIZAR COMPRA</a></li>
+            <li class="active"><a href="home.html" class="waves-effect waves-light">INCIAR SESIÓN</a></li>
+            <li class="active"><a class="waves-effect waves-light" href="providers.html">FINALIZAR COMPRA</a></li>
             <li class="active"><a href="index.html" class="waves-effect waves-light">CREAR CUENTA</a></li>
-            <li class="active"><a class="waves-effect waves-light" href="about.html">ACERCA</a></li>
+            <br>
 
+            <li><a class="subheader">Productos</a></li>
             <li><div class="divider"></div></li>
-                <li><a class="subheader">Productos</a></li>
-                    <li><a href="#" class="black-text">Quesos</a></li>
-                    <li><a href="#" class="black-text">Tortillas</a></li>
+            <li ><a class="waves-effect waves-light" href="#">QUESOS</a></li>
+            <li ><a class="waves-effect waves-light" href="#">TORTILLAS</a></li>
+            <li ><a class="waves-effect waves-light" href="#">PLATILLOS</a></li>
+            
+
+            <br>
             <div class="container valign-wrapper section">
                 <div class="center sidenav-cart">
                     <a href="#carrito" class=
@@ -80,7 +81,7 @@
     <div class="row searchbar">
         <form class="col s12">
             <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s8">
                     <label class="label-icon prefix" for="search"><i class="material-icons">search</i></label>
                     <input id="search" type="search" placeholder="¿Que estas buscando?" required>
                     <i class="material-icons">close</i>
@@ -110,13 +111,11 @@
         </div>
     </section>
 
-    <div class="section">
-        <div class="container">
+    <div class="container section container1">
             <h3>PRODUCTOS MAZAMITLA</h3>
             <h4>QUESOS</h4>
             <div class="row row1" id="geeks">
 
-            </div>
         </div>
     </div>
 
@@ -149,7 +148,9 @@
 </section> -->
 
 <section class="container content-section">
-    <h2 class="section-header">Carrito</h2>
+    <div class="scrollspy" id="carrito">
+        <h2 class="carrito">CARRITO</h2>
+    </div>
     <div class="cart-row">
         <span class="cart-header cart-column cart-item">Articulo</span>
         <span class="cart-header cart-column cart-price">Precio</span>
@@ -166,11 +167,6 @@
 </section>
 
 
-<div class="scrollspy" id="carrito">
-    <h2 class="carrito">CARRITO</h2>
-
-</div>
-
     <a href="#terms" class="btn-small orange modal-trigger">Terminos & Condiciones</a>
                     <div class="modal" id="terms">
                         <div class="modal-content">
@@ -183,46 +179,40 @@
                         </div>
                     </div>
 
-            <div class="fixed-action-btn">
-                <a class="btn-floating btn-large red">
-                    <i class="large material-icons">add</i>
-                </a>
-                <ul>
-                    <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-                    <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-                    <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-                    <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-                </ul>
-                </div>            
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large green">
+                <i class="fa fa-whatsapp whatsapp"></i>
+            </a>
+            </div>            
 
-                    <footer class="page-footer grey">
-                        <div class="container">
-                        <div class="row">
-                            <div class="col s8">
-                                <h5 class="band-logo">PRODUCTOS JERRY</h5>
-                                <li><a href="home.html" class="waves-effect waves-light black-text">INICIAR SESIÓN</a></li>
-                                <li><a href="providers.html" class="waves-effect waves-light black-text">REGISTRASRE</a></li>
-                                <li><a href="index.html"
-                                    class="waves-effect waves-light black-text">TIENDA</a></li>
-                                <li><a href="about.html" class="waves-effect waves-light black-text">SOBRE NOSOTROS</a></li>
-                            </div>
-                            <div class="col s3">
-                                <br>
-                                <ul>
-                            <div class="valign-wrapper">
-                                <li><a href="#" class="btn-floating btn-medium indigo darken-3 mediaicon">
-                            <i class="fab fa-facebook"></i></a></li>
-                        <a href="#" class="grey-text text-lighten-3">Facebook</a>
-                        </div>
-                        <div class="valign-wrapper">
-                            <li><a href="#" class="btn-floating btn-medium indigo darken-4 mediaicon">
-                                <i class="fab fa-instagram"></i>
-                                </a></li>
-                            <li><a href="#" class="grey-text text-lighten-3 ">Instagram</a></li>
-                        </div>
-                    </ul>
+            <footer class="page-footer grey">
+                <div class="container">
+                <div class="row">
+                    <div class="col s8">
+                        <h5 class="band-logo">PRODUCTOS JERRY</h5>
+                        <li><a href="home.html" class="waves-effect waves-light black-text">INICIAR SESIÓN</a></li>
+                        <li><a href="providers.html" class="waves-effect waves-light black-text">REGISTRASRE</a></li>
+                        <li><a href="index.html"
+                            class="waves-effect waves-light black-text">TIENDA</a></li>
+                        <li><a href="about.html" class="waves-effect waves-light black-text">SOBRE NOSOTROS</a></li>
+                    </div>
+                    <div class="col s3">
+                        <br>
+                        <ul>
+                    <div class="valign-wrapper">
+                        <li><a href="#" class="btn-floating btn-medium indigo darken-3 mediaicon">
+                    <i class="fab fa-facebook"></i></a></li>
+                <a href="#" class="grey-text text-lighten-3">Facebook</a>
                 </div>
+                <div class="valign-wrapper">
+                    <li><a href="#" class="btn-floating btn-medium indigo darken-4 mediaicon">
+                        <i class="fab fa-instagram"></i>
+                        </a></li>
+                    <li><a href="#" class="grey-text text-lighten-3 ">Instagram</a></li>
+                </div>
+            </ul>
             </div>
+        </div>
         </div>
         <div class="footer-copyright grey darken-4">
             <div class="container center-align white-text">&copy; 2020 Productos Jerry</div>

@@ -4,53 +4,74 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch("./items.json").then(function(resp) {
         return resp.json();
     }).then(function(data) {
-        
-        var obj = data;
 
-        var info = obj.productos;
-        var block = document.createElement('div');
+        var {productos, postres} = data;
 
-        console.log(info[0]);
         var text = "";
-
+        var text1= "";
         var i;
-        for (i= 0; i < info.length; i++) {
+        for (i= 0; i < productos.length; i++) {
             text += `
-            <div class="col s5 m5  z-depth-2">
-                <div class="card">
-                    <div class="card-image">
-                        <img class="responsive-image storeimg" src="Images/` + info[i].imgName + `">
-                        <a href="#" class="btn-floating yellow black-text  halfway-fab center">$` + (info[i].price/100) + `</a>
-                    </div>
-                    </div>
-                <div class="card-content">
-                    <div class="card-item">` + info[i].name + `</div>
-                    <div class="valign-wrapper row">
-                        <div class="col s6"><input type="number" value="1" id="quantity" class="input-field center">
-                        </div>
-                        <div class="col s2 pull-s2">
-                            <div class="box">
-                            <ul>
-                            <li><a href="#"><i class="material-icons">arrow_drop_up</i></a></li>
-                            <li><a href="#"><i class="material-icons">arrow_drop_down</i></a></li></ul></div>
-                        </div>
-                        <div class="col s3 pull-s2">piezas</div>
-                    </div>
+        <div class="col s6 m4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="Images/${productos[i].imgName}" alt="" class="responsive-img materialboxed" width=
+                    "50" data-caption="quesos">
+                    <a href="#" class="btn-small btn-floating yellow black-text halfway-fab right">$${(productos[i].price/100)}</a>
                 </div>
-                    <div class="card-action">
-                        <button class="btn-medium black-text orange right btn1 shop-item-button valign-wrapper">
-                            <a href="#"><i class="material-icons">shopping_cart</i></a>
-                        <a class="black-text" href="#">Agregar</a>
-                        </button>
+                <div class="card-title">
+                    <p class="">${productos[i].name}</p>
+                </div>
+                <div class="row valign-wrapper piezas center">
+                    <div class="input-field col s5 push-s1">
+                    <input type="number" value="1" id="quantity" class="center">
                     </div>
+                    <div class="col s4">
+                    <ul class=""><li><a href="#"><i class="material-icons">arrow_drop_up</i></a></li>
+                    <li><a href="#"><i class="material-icons">arrow_drop_down</i></a></li></ul>
                     </div>
-            </div>`;
+                    <div class="col s3 pull-s2">
+                    <span class="">piezas</span></div>
+                </div>
+                    <div class="center"><button class="btn-small black-text orange  shop-item-button">
+                        <a href="#"><i class="material-icons left">shopping_cart</i></a>
+                    <a class="black-text" href="#">Agregar</a>
+                    </button></div>
+            </div>
+        </div>`;};
+        for (i= 0; i < postres.length; i++) {
+            text1 += `
+        <div class="col s6 m4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="Images/${postres[i].imgName}" alt="" class="responsive-img materialboxed" width=
+                    "50" data-caption="quesos">
+                    <a href="#" class="btn-small btn-floating yellow black-text halfway-fab right">$${(postres[i].price/100)}</a>
+                </div>
+                <div class="card-title">
+                    <p class="">${postres[i].name}</p>
+                </div>
+                <div class="row valign-wrapper piezas center">
+                    <div class="input-field col s5 push-s1">
+                    <input type="number" value="1" id="quantity" class="center">
+                    </div>
+                    <div class="col s4">
+                    <ul class=""><li><a href="#"><i class="material-icons">arrow_drop_up</i></a></li>
+                    <li><a href="#"><i class="material-icons">arrow_drop_down</i></a></li></ul>
+                    </div>
+                    <div class="col s3 pull-s2">
+                    <span class="">piezas</span></div>
+                </div>
+                    <div class="center"><button class="btn-small black-text orange  shop-item-button">
+                        <a href="#"><i class="material-icons left">shopping_cart</i></a>
+                    <a class="black-text" href="#">Agregar</a>
+                    </button></div>
+            </div>
+        </div>`;}
+        document.getElementById("test1").innerHTML = text;
 
-        }
-
-        document.getElementById("geeks").innerHTML = text;
-        
-
+        document.getElementById("test2").innerHTML = text1;
+        document.getElementById("test3").innerHTML = text1;
 
 })})
 

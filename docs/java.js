@@ -1,8 +1,9 @@
 
     document.addEventListener('DOMContentLoaded', function() {
+
+    var options = {edge:"right"};
     var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems);
-    var instance = M.Sidenav.getInstance(elem);
+    var instances = M.Sidenav.init(elems, options);
 
     })
 
@@ -12,11 +13,19 @@
         var instance = M.Modal.getInstance(elems);
       });
 
-    document.addEventListener('DOMContentLoaded',function() {
-      var elems = document.querySelectorAll('.materialboxed');
-      var instances = M.Materialbox.init(elems);
-      var instance = M.Materialbox.getInstance(elems);
-      
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.materialboxed');
+        var instances = M.Materialbox.init(elems);
+      });
+    
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.carousel');
+
+      var instances = M.Carousel.init(elems, {
+        fullWidth: true,
+        indicators: true
+      });
     });
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -33,7 +42,7 @@
 
     document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('.tabs');
-      var instance = M.Tabs.init(elems);
+      var instance = M.Tabs.init(elems, {swipeable: "true"});
       var instance = M.Tabs.getInstance(elems);
     });
 
@@ -66,4 +75,13 @@
       var instances = M.FloatingActionButton.init(elems, {
         direction: 'left'
       });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.dropdown-trigger');
+      var instances = M.Dropdown.init(elems);
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.collapsible');
+      var instances = M.Collapsible.init(elems);
     });

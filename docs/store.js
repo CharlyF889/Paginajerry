@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>`;}
         document.getElementById("test1").innerHTML = text;
 
-        document.getElementById("test2").innerHTML = text1;
+        document.getElementById("test2").innerHTML = text;
         document.getElementById("test3").innerHTML = text1;
 
 })})

@@ -37,6 +37,9 @@ header {
     font-size: 3rem !important;
     margin-left: 0.5em !important;
 }
+.menu1{
+    background-color: none;
+}
 
 .dropdown-content{
     position: relative;

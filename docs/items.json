@@ -20,8 +20,20 @@
         },
         {
             "id": "4",
-            "name": "Adobera 1.2 Kg.",
+            "name": "Adobera de Fundir 1.2 Kg.",
             "price": "11500",
+            "imgName": "6a.jpeg"
+        },
+        {
+            "id": "5",
+            "name": "Cotija 500g.",
+            "price": "6000",
+            "imgName": "7a.jpeg"
+        },
+        {
+            "id": "6",
+            "name": "Crema 500mL.",
+            "price": "3500",
             "imgName": "6a.jpeg"
         }
     ],

@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
         return resp.json();
     }).then(function(data) {
 
-        var {productos, postres} = data;
+        const {productos, postres} = data;
+
 
         var text = "";
         var text1= "";
@@ -15,12 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="col s6 m4">
             <div class="card">
                 <div class="card-image">
-                    <img src="Images/${productos[i].imgName}" alt="" class="responsive-img materialboxed" width=
+                    <img src="Images/${productos[i].imgName}" alt="" class="responsive-img materialboxed img" width=
                     "50" data-caption="quesos">
-                    <a href="#" class="btn-small btn-floating yellow black-text halfway-fab right">$${(productos[i].price/100)}</a>
-                </div>
-                <div class="card-title">
-                    <p class="">${productos[i].name}</p>
+                    <div class="halfway-fab info">
+                    <span class="card-title left"><p class="flow-text white-text brown lighten-2">${productos[i].name}</p></span>
+                    <a href="#" class="btn-small btn-floating yellow black-text right pricetag">$${(productos[i].price/100)}</a></div>
+                    
                 </div>
                 <div class="row valign-wrapper piezas center">
                     <div class="input-field col s5 push-s1">
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="col s3 pull-s2">
                     <span class="">piezas</span></div>
                 </div>
-                    <div class="center"><button class="btn-small black-text orange  shop-item-button">
+                    <div class="center"><button class="btn-small black-text orange shop-item-button">
                         <a href="#"><i class="material-icons left">shopping_cart</i></a>
                     <a class="black-text" href="#">Agregar</a>
                     </button></div>
@@ -46,10 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="card-image">
                     <img src="Images/${postres[i].imgName}" alt="" class="responsive-img materialboxed" width=
                     "50" data-caption="quesos">
+                    <span class="card-title">${postres[i].name}</span>
                     <a href="#" class="btn-small btn-floating yellow black-text halfway-fab right">$${(postres[i].price/100)}</a>
-                </div>
-                <div class="card-title">
-                    <p class="">${postres[i].name}</p>
+                </div> 
                 </div>
                 <div class="row valign-wrapper piezas center">
                     <div class="input-field col s5 push-s1">
@@ -72,6 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.getElementById("test2").innerHTML = text;
         document.getElementById("test3").innerHTML = text1;
+
+        var elems = document.querySelectorAll('.materialboxed');
+        var instances = M.Materialbox.init(elems);
 
 })})
 

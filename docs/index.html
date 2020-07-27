@@ -7,8 +7,10 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable=yes/>
-    <script src="https://kit.fontawesome.com/2a8fc56a4a.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -16,7 +18,7 @@
             <nav class="nav-extended grey lighten-3">
                 <div class="nav-wrapper valign-wrapper">
                     <a href="#!" class="brand-logo mainlogo">
-                        <img class="circle responsive-img waves-effect waves-light z-depth-2" src="Images/Logo Jerry.jpg"></a>
+                        <img class="circle responsive-img waves-effect waves-light z-depth-2 animate__animated animate__fadeInDown" src="Images/Logo Jerry.jpg"></a>
                     <a href="#!" class="left menu1 dropdown-trigger" data-target="dropdown1">
                     <i class="material-icons menu">menu</i></a>
                     <ul id="dropdown1" class='dropdown-content'>
@@ -80,118 +82,159 @@
     </div>    
     </header>
 
-<div class="section1">
-    <div class="row row1">
-        <div class="input-field col s7">
-            <i class="material-icons prefix">search</i>
-            <input id="search" type="text" class="autocomplete">
-            <label for="search">¿Buscas algo?</label>
-            <i class="material-icons prefix right">close</i>
+<div class="center section" id="circulo">
+    <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+            <div class="circle"></div>
+            </div><div class="gap-patch">
+            <div class="circle"></div>
+            </div><div class="circle-clipper right">
+            <div class="circle"></div>
+            </div>
         </div>
     </div>
 </div>
+
+<div class="hide" id="contenido">
+        
+    <div class="carousel carousel-slider carousel1">
+        <a class="carousel-item back1 back" href="#one!">
+            <h1 class="center orange-text text-lighten-3 entrega">Entregamos en la ZMG</h1>
+        </a>
+        <a class="carousel-item back back2" href="#two!">
+
+        </a>
+        <a class="carousel-item back back3" href="#two!">
+        </a>
+    </div>
+    <div class="section1 section">
+        <div class="row row1">
+            <div class="input-field col s7 white">
+                <i class="material-icons prefix">search</i>
+                <input type="text" id="search" class="autocomplete">
+                <label class="black-text" for="search">¿Buscas algo?</label>
+                <i class="material-icons prefix right">close</i>
+            </div>
+        </div>
+    </div>
     
-<div class="carousel carousel-slider carousel1">
-    <a class="carousel-item" href="#one!">
-        <img class="responsive-img" src="Images/4a.jpeg">
-        <span>Entregamos en la ZMG</span>
-    </a>
-    <a class="carousel-item" href="#two!">
-        <img class="responsive-img" src="Images/5a.jpeg">
-    </a>
-    <a class="carousel-item" href="#two!">
-        <img src="Images/1a.jpeg">
-    </a>
-</div>
-<br>
+    <h5 class="center">PRODUCTOS MAZAMITLA</h5>
+    <br class="">
+    <li class="divider" tabindex="-1"></li>
 
-<h5>  &nbsp;&nbsp;PRODUCTOS MAZAMITLA</h5>
-<br class="">
-<li class="divider" tabindex="-1"></li>
-
-
-    <ul class="tabs">
-        <li class="tab col s3 active waves-effect"><a href="#test1">CREMERIA</a></li>
-        <li class="tab col s3"><a href="#test2">TORTILLAS</a></li>
-        <li class="tab col s3"><a href="#test3">POSTRES</a></li>
+    <ul class="collapsible expandible">
+        <li class="">
+        <div class="collapsible-header orange lighten-2"><i class="material-icons">expand_more</i>CREMERIA</div>
+        <div class="collapsible-body">
+            <div id="test1" class="row"></div></div>
+        </li>
+        <li>
+        <div class="collapsible-header orange lighten-3"><i class="material-icons">expand_more</i>TORTILLAS</div>
+        <div class="collapsible-body">
+            <div id="test2" class="row content-section"></div></div>
+        </li>
+        <li>
+        <div class="collapsible-header orange lighten-4"><i class="material-icons">expand_more</i>POSTRES</div>
+        <div class="collapsible-body">
+            <div id="test3" class="row content-section"></div></div>
+        </li>
     </ul>
-
-    <div id="test1" class="row content-section">
-        <!-- <a class="subheader black-text"><h6>QUESOS</h6></a> -->
-    </div>
-    <div id="test2" class="row content-section"></div>
-    <div id="test3" class="row content-section"></div>
-
-<section class="content-section">
-    <div class="scrollspy" id="carrito">
-        <h2 class="carrito">CARRITO</h2>
-    </div>
-    <div class="cart-row">
-        <span class="cart-header cart-column cart-item">Articulo</span>
-        <span class="cart-header cart-column cart-price">Precio</span>
-        <span class="cart-header cart-column cart-quantity">Cantidad</span>
-    </div>
-    <div class="cart-items">
-    </div>
-    <div class="cart-total">
-        <strong class="cart-total-title">Total</strong>
-        <span class="cart-total-price">$0.00</span>
-    </div>
-    <button class="btn btn-primary btn-purchase" type="button">FINALIZAR COMPRA</button>
-
-</section>
-
-
-    <a href="#terms" class="btn-small orange modal-trigger">Terminos & Condiciones</a>
-    <div class="modal" id="terms">
-        <div class="modal-content">
-            <h4>Terminos & Condiciones</h4>
-            <p>Productos Jerry se compromete con el cliente.</p>
+    
+    <section class="container">
+        <div class="scrollspy" id="carrito">
+            <h2 class="carrito">CARRITO</h2>
         </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close btn orange">Estoy de acuerdo.
-            </a>
+        <div id="carrito-foot">
+
         </div>
-    </div>
+        <ul class="collection">
+            <li class="collection-item avatar">
+              <img src="Images/1a.jpeg" alt="" class="circle">
+              <span class="title">Title</span>
+              <p>First Line <br>
+                 Second Line
+              </p>
+              <a href="#!" class="secondary-content"><i class="material-icons">remove_shopping_cart</i></a>
+            </li>
+            <li class="collection-item avatar">
+              <i class="material-icons circle">folder</i>
+              <span class="title">Title</span>
+              <p>First Line <br>
+                 Second Line
+              </p>
+              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+            </li>
+          </ul>
 
-    <div class="fixed-action-btn">
-        <a class="btn-floating btn-large green">
-            <i class="fa fa-whatsapp whatsapp"></i></a>
-    </div>            
-
-    <footer class="page-footer grey">
-        <div class="container">
-        <div class="row">
-            <div class="col s8">
-                <h5 class="band-logo">PRODUCTOS JERRY</h5>
-                <li><a href="#!" class="waves-effect waves-light black-text">INICIAR SESIÓN</a></li>
-                <li><a href="#!" class="waves-effect waves-light black-text">REGISTRASRE</a></li>
-                <li><a href="#!"
-                    class="waves-effect waves-light black-text">TIENDA</a></li>
-                <li><a href="about.html" class="waves-effect waves-light black-text">SOBRE NOSOTROS</a></li>
+        <div class="cart-row">
+            <span class="cart-header cart-column cart-item">Articulo</span>
+            <span class="cart-header cart-column cart-price">Precio</span>
+            <span class="cart-header cart-column cart-quantity">Cantidad</span>
+        </div>
+        <div class="cart-items">
+        </div>
+        <div class="cart-total">
+            <strong class="cart-total-title">Total</strong>
+            <span class="cart-total-price">$0.00</span>
+        </div>
+        <button class="btn btn-primary btn-purchase" type="button">FINALIZAR COMPRA</button>
+    
+    </section>
+    
+    
+        <a href="#terms" class="btn-small orange modal-trigger">Terminos & Condiciones</a>
+        <div class="modal" id="terms">
+            <div class="modal-content">
+                <h4>Terminos & Condiciones</h4>
+                <p>Productos Jerry se compromete con el cliente.</p>
             </div>
-            <div class="col s3">
-                <br>
-                <ul>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close btn orange">Estoy de acuerdo.
+                </a>
+            </div>
+        </div>
+    
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large green">
+                <i class="fa fa-whatsapp whatsapp"></i></a>
+        </div>            
+    
+        <footer class="page-footer grey">
+            <div class="container">
+            <div class="row">
+                <div class="col s8">
+                    <h5 class="band-logo">PRODUCTOS JERRY</h5>
+                    <li><a href="#!" class="waves-effect waves-light black-text">INICIAR SESIÓN</a></li>
+                    <li><a href="#!" class="waves-effect waves-light black-text">REGISTRASRE</a></li>
+                    <li><a href="#!"
+                        class="waves-effect waves-light black-text">TIENDA</a></li>
+                    <li><a href="about.html" class="waves-effect waves-light black-text">SOBRE NOSOTROS</a></li>
+                </div>
+                <div class="col s3">
+                    <br>
+                    <ul>
+                <div class="valign-wrapper">
+                    <li><a href="#!" class="btn-floating btn-medium indigo darken-3 mediaicon">
+                <i class="fab fa-facebook"></i></a></li>
+            <a href="#!" class="grey-text text-lighten-3">Facebook</a>
+            </div>
             <div class="valign-wrapper">
-                <li><a href="#!" class="btn-floating btn-medium indigo darken-3 mediaicon">
-            <i class="fab fa-facebook"></i></a></li>
-        <a href="#!" class="grey-text text-lighten-3">Facebook</a>
-        </div>
-        <div class="valign-wrapper">
-            <li><a href="#!" class="btn-floating btn-medium indigo darken-4 mediaicon">
-                <i class="fab fa-instagram"></i>
-                </a></li>
-            <li><a href="#!" class="grey-text text-lighten-3 ">Instagram</a></li>
+                <li><a href="#!" class="btn-floating btn-medium indigo darken-4 mediaicon">
+                    <i class="fab fa-instagram"></i>
+                    </a></li>
+                <li><a href="#!" class="grey-text text-lighten-3 ">Instagram</a></li>
+                </div>
+            </ul>
             </div>
-        </ul>
         </div>
-    </div>
-    </div>
-    <div class="footer-copyright grey darken-4">
-        <div class="container center-align white-text">&copy; 2020 Productos Jerry</div>
-    </div>
+        </div>
+        <div class="footer-copyright grey darken-4">
+            <div class="container center-align white-text">&copy; 2020 Productos Jerry</div>
+        </div>
     </footer>
+    </div>
+    <script defer src="https://kit.fontawesome.com/2a8fc56a4a.js" crossorigin="anonymous"></script>
         <!-- Compiled and minified JavaScript -->
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script defer src="java.js"></script>

@@ -1,11 +1,76 @@
 
+    
+    window.addEventListener('load', ()=>{
+
+      // setTimeout(carga, 2000);
+      carga();
+      function carga(){
+        document.getElementById('circulo').className = 'hide';
+        document.getElementById('contenido').className = '';
+      }
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+
+      fetch("./items.json").then(function(resp) {
+          return resp.json();
+      }).then(function(data) {
+
+        const info = data;
+        const {productos, postres} = data;
+        const names1 = productos.map(
+          function({name}) {
+            return name;
+          }
+        );
+        const names2 = postres.map(
+          function({name}) {
+            return name;
+          }
+        );
+        var i;
+        var obj = new Object();
+      
+        function crearnombres(names){
+          for (i= 0; i < names.length; i++) {
+            obj[`${names[i]}`] = null;
+          };
+          return obj;
+        }
+
+        var nombres1 = crearnombres(names1);
+            nombres1 = crearnombres(names2);
+
+        console.log(nombres1);
+
+        var options = {
+          data: nombres1,
+          onAutocomplete: function(){
+            console.log('clickeaste')
+          },};
+
+        var elems = document.querySelectorAll('.autocomplete');
+        var instances = M.Autocomplete.init(elems, options);
+
+        var elems = document.querySelectorAll('.carousel');
+        var instances = M.Carousel.init(elems, {
+        fullWidth: true,
+        indicators: true
+        });
+        
+        var elems = document.querySelectorAll('.slider');
+        var instances = M.Slider.init(elems);
+
+
+      })});
+    
     document.addEventListener('DOMContentLoaded', function() {
 
     var options = {edge:"right"};
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems, options);
 
-    })
+    });
 
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.modal');
@@ -13,31 +78,10 @@
         var instance = M.Modal.getInstance(elems);
       });
 
-      document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.materialboxed');
-        var instances = M.Materialbox.init(elems);
-      });
-    
-
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.carousel');
-
-      var instances = M.Carousel.init(elems, {
-        fullWidth: true,
-        indicators: true
-      });
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.slider');
-      var instances = M.Slider.init(elems);
-      var instance = M.Slider.getInstance(elems);
-    });
 
     document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('.parallax');
       var instances = M.Parallax.init(elems);
-      var instance = M.Parallax.getInstance(elems);
     });
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -83,5 +127,7 @@
     });
     document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('.collapsible');
-      var instances = M.Collapsible.init(elems);
+      var instances = M.Collapsible.init(elems, {
+        accordion: false
+      });
     });

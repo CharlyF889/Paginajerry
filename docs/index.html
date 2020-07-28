@@ -96,46 +96,48 @@
     </div>
 </div>
 
-<div class="hide" id="contenido">
-        
     <div class="carousel carousel-slider carousel1">
-        <a class="carousel-item back1 back" href="#one!">
-            <h1 class="center orange-text text-lighten-3 entrega">Entregamos en la ZMG</h1>
-        </a>
-        <a class="carousel-item back back2" href="#two!">
-
-        </a>
-        <a class="carousel-item back back3" href="#two!">
-        </a>
+        <div class="carousel-fixed-item center">
+            <span class="orange-text text-lighten-3 entrega">Entregamos en la ZMG</span>
+        </div>
+        <div class="carousel-item" href="#one!"><img src="Images/2a.jpeg"></div>
+        <div class="carousel-item back" href="#two!">
+            <div class="center informacion">
+                <a class="btn-small waves-effect white grey-text darken-text-2">Mas información</a>
+            </div></div>
+        <div class="carousel-item" href="#three!"><img src="Images/1a.jpeg"></div>
     </div>
+
+<div class="hide" id="contenido">
     <div class="section1 section">
         <div class="row row1">
             <div class="input-field col s7 white">
                 <i class="material-icons prefix">search</i>
-                <input type="text" id="search" class="autocomplete">
+                <input type="text" id="search" class="autocomplete search">
                 <label class="black-text" for="search">¿Buscas algo?</label>
-                <i class="material-icons prefix right">close</i>
+                <a href="#!" onclick="this.parentElement.getElementsByClassName('search')[0].value = ''" class="erase-search"><i class="material-icons prefix right">close</i></a>
             </div>
         </div>
     </div>
-    
-    <h5 class="center">PRODUCTOS MAZAMITLA</h5>
-    <br class="">
+
+    <!-- this.parentElement.getElementsById('search').value = '' -->
+    <h5 class="flow-text center">PRODUCTOS MAZAMITLA</h5>
+    <br>
     <li class="divider" tabindex="-1"></li>
 
     <ul class="collapsible expandible">
-        <li class="">
-        <div class="collapsible-header orange lighten-2"><i class="material-icons">expand_more</i>CREMERIA</div>
+        <li class="active">
+        <div class="collapsible-header orange lighten-2 waves-effect"><i class="material-icons">expand_more</i>CREMERIA</div>
         <div class="collapsible-body">
             <div id="test1" class="row"></div></div>
         </li>
         <li>
-        <div class="collapsible-header orange lighten-3"><i class="material-icons">expand_more</i>TORTILLAS</div>
+        <div class="collapsible-header orange lighten-3 waves-effect"><i class="material-icons">expand_more</i>TORTILLAS</div>
         <div class="collapsible-body">
             <div id="test2" class="row content-section"></div></div>
         </li>
         <li>
-        <div class="collapsible-header orange lighten-4"><i class="material-icons">expand_more</i>POSTRES</div>
+        <div class="collapsible-header orange lighten-4 waves-effect"><i class="material-icons">expand_more</i>POSTRES</div>
         <div class="collapsible-body">
             <div id="test3" class="row content-section"></div></div>
         </li>
@@ -145,27 +147,36 @@
         <div class="scrollspy" id="carrito">
             <h2 class="carrito">CARRITO</h2>
         </div>
-        <div id="carrito-foot">
 
+        <ul class="collection" id="carrito-foot">
+            <li class="collection-item avatar">
+            <img src="Images/1a.jpeg" alt="" class="circle">
+            <span class="title">Title</span>
+            <p>First Line <br>
+                Second Line
+            </p>
+            <a href="#!" class="secondary-content"><i class="material-icons">remove_shopping_cart</i></a>
+            </li>
+
+        <li class="collection-item avatar">
+            <i class="material-icons circle">folder</i>
+            <span class="title">Title</span>
+        <div class="row valign-wrapper">
+            <div class="col s3">
+                <input type="number" value="1" id="quantity" class="center">
+            </div>
+            <div class="col s2 pull-s2">
+                <ul class=""><li><a href="#"><i class="material-icons">arrow_drop_up</i></a></li>
+                <li><a href="#"><i class="material-icons">arrow_drop_down</i></a></li></ul>
+            </div>
+            <span class="col s1 pull-s4">pzs</span>
+        
+            <div class="col s1">
+                <a href="#!" type="button" class=""><i class="material-icons red-text text-darken-2">delete</i></a>
+            </div>
         </div>
-        <ul class="collection">
-            <li class="collection-item avatar">
-              <img src="Images/1a.jpeg" alt="" class="circle">
-              <span class="title">Title</span>
-              <p>First Line <br>
-                 Second Line
-              </p>
-              <a href="#!" class="secondary-content"><i class="material-icons">remove_shopping_cart</i></a>
-            </li>
-            <li class="collection-item avatar">
-              <i class="material-icons circle">folder</i>
-              <span class="title">Title</span>
-              <p>First Line <br>
-                 Second Line
-              </p>
-              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-            </li>
-          </ul>
+        </li>
+        </ul>
 
         <div class="cart-row">
             <span class="cart-header cart-column cart-item">Articulo</span>
@@ -178,7 +189,7 @@
             <strong class="cart-total-title">Total</strong>
             <span class="cart-total-price">$0.00</span>
         </div>
-        <button class="btn btn-primary btn-purchase" type="button">FINALIZAR COMPRA</button>
+        <button class="btn btn-primary btn-purchase" type="button" >FINALIZAR COMPRA</button>
     
     </section>
     
@@ -198,18 +209,19 @@
         <div class="fixed-action-btn">
             <a class="btn-floating btn-large green">
                 <i class="fa fa-whatsapp whatsapp"></i></a>
-        </div>            
+        </div>           
     
         <footer class="page-footer grey">
             <div class="container">
             <div class="row">
                 <div class="col s8">
-                    <h5 class="band-logo">PRODUCTOS JERRY</h5>
+                    <h5 class="brand-logo">PRODUCTOS JERRY</h5>
+                    <ul>
                     <li><a href="#!" class="waves-effect waves-light black-text">INICIAR SESIÓN</a></li>
                     <li><a href="#!" class="waves-effect waves-light black-text">REGISTRASRE</a></li>
                     <li><a href="#!"
                         class="waves-effect waves-light black-text">TIENDA</a></li>
-                    <li><a href="about.html" class="waves-effect waves-light black-text">SOBRE NOSOTROS</a></li>
+                    <li><a href="about.html" class="waves-effect waves-light black-text">SOBRE NOSOTROS</a></li></ul>
                 </div>
                 <div class="col s3">
                     <br>
@@ -229,11 +241,22 @@
             </div>
         </div>
         </div>
+        <div class="row">
+            <div class="col s8 push-s1 valign-wrapper">
+                <h6>Pago Seguro &nbsp;&nbsp;</h6>
+                <span><i class="material-icons">security</i>
+                    <i class="material-icons">payment</i><i class="material-icons">lock_outline</i>
+                    &nbsp;
+                    </span>
+                    <i><img class="stripe" src="Images/stripe.jpg"></img></i>
+            </div>
+        </div>
         <div class="footer-copyright grey darken-4">
             <div class="container center-align white-text">&copy; 2020 Productos Jerry</div>
         </div>
     </footer>
-    </div>
+</div> 
+
     <script defer src="https://kit.fontawesome.com/2a8fc56a4a.js" crossorigin="anonymous"></script>
         <!-- Compiled and minified JavaScript -->
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

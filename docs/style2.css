@@ -37,7 +37,16 @@ header {
     margin-bottom: 0px !important;
 }
 .entrega{
-    font-size: 3em;
+    font-size: 2.2em;
+    position: relative;
+    bottom: 4.5rem;
+}
+
+.informacion{
+
+    position: relative;
+    top: 8rem;
+
 }
 
 .menu{
@@ -122,7 +131,7 @@ header {
 }
 
 .card-title p{
-    font-size: 1.3rem !important;
+    font-size: 1.2rem !important;
     font-weight: 590;
     margin-top: 0px !important;
     margin-bottom: 0px !important;
@@ -145,15 +154,14 @@ header {
     flex-direction: row;
     align-items: flex-start !important;
 
-    bottom: 0.9em;
+    bottom: 0.7rem;
     padding-right: 6px !important;
 }
 
 .shop-item-button{
     position: relative !important;
     bottom: 0.8em;
-    margin-bottom: 0.6em;
-    
+    margin-bottom: 0.6em; 
 
 }
 
@@ -161,7 +169,7 @@ header {
     margin-bottom: 8px !important;
     margin-top: 0px !important;
     padding-top: 0px !important;
-    width: 100% !important;
+    /* width: 100% !important; */
 }
 
 /* .btn1{
@@ -207,8 +215,9 @@ header {
 }
 
 @media only screen and (max-width: 600px) {
-    .carousel-item {
-        height: 20vh !important;
+
+    .carousel img {
+        height: 30vh !important;
     }
     .carousel1 {
         height: 30vh !important;
@@ -216,42 +225,35 @@ header {
 }
 
 @media only screen and (min-width: 600px) {
-    .carousel-item {
-        height: 20vh !important;
+    .carousel img {
+        height: 30vh !important;
     }
     .carousel1 {
-        height: 40vh !important;
+        height: 30vh !important;
     }
+
+}
+.back{
+    background-image: url("Images/5a.jpeg");
+    background-position: 60% -8em !important;
+    background-repeat: no-repeat;
+    background-size: cover !important; 
 }
 
-.carousel1{
+/* .carousel1{
     margin-top: 0px !important;
     padding-top: 0px !important;
-}
-
-.back1{
-    background-image: url("Images/4a.jpeg");
-}
-.back2{
-    background-image: url("Images/5a.jpeg");
-}
-.back3{
-    background-image: url("Images/1a.jpeg");
-}
-
-.back{
-    background-repeat: no-repeat;
-    background-position: bottom !important;
-    background-size: 100% 100%;
-    width: 100%;
-}
+} */
 
 .modal-trigger{
     margin-top: 2em;
     margin-bottom: 1em;
 }
 
-
-.whatsapp{
+.whatsapp {
     font-size: 2.2em !important;
+}
+
+.stripe{
+    max-height: 40px;;
 }

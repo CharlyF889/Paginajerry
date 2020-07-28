@@ -7,71 +7,97 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const {productos, postres} = data;
 
+        function cardItems(productos){
+            var text = "";
+            var i;
+            for (i= 0; i < productos.length; i++) {
+                
+                text += `
+            <div class="col s6 m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="Images/${productos[i].imgName}" alt="" class="responsive-img materialboxed img" width=
+                        "50" data-caption="${productos[i].name}">
+                        <div class="halfway-fab info">
+                        <span class="card-title left"><p class="flow-text white-text brown lighten-2">${productos[i].name}</p></span>
+                        <a href="#!" class="btn-small btn-floating yellow black-text right pricetag">$${(productos[i].price/100)}</a></div>
+                        
+                    </div>
+                    <div class="box">
+                    <div class="row valign-wrapper piezas center">
+                        <div class="input-field col s4 push-s2">
+                        <input type="number" id="quantity" class="center" value="1" min="1" max="100" required>
+                        </div>
+                        <div class="col s4">
+                        <ul class=""><li><a href="#!" type="button" class="up waves-effect waves-lighten"><i class="material-icons" id="up">arrow_drop_up</i></a></li>
+                        <li><a href="#!" class="down waves-effect waves-lighten"><i class="material-icons" id="down">arrow_drop_down</i></a></li></ul>
+                        </div>
+                        <div class="col s3 pull-s2">
+                        <span class="">&nbsp;piezas</span></div>
+                    </div></div>
+                        <div class="center">
+                        <button type="button" class="btn-small black-text orange shop-item-button">
+                            <i class="material-icons left">shopping_cart</i></a>
+                            <a class="black-text" href="#!">Agregar</a>
+                            </button></div>
+                </div>
+            </div>`;}
+            return text;
+        }
+        
+        document.getElementById("test1").innerHTML = cardItems(productos);
 
-        var text = "";
-        var text1= "";
-        var i;
-        for (i= 0; i < productos.length; i++) {
-            text += `
-        <div class="col s6 m4">
-            <div class="card">
-                <div class="card-image">
-                    <img src="Images/${productos[i].imgName}" alt="" class="responsive-img materialboxed img" width=
-                    "50" data-caption="quesos">
-                    <div class="halfway-fab info">
-                    <span class="card-title left"><p class="flow-text white-text brown lighten-2">${productos[i].name}</p></span>
-                    <a href="#" class="btn-small btn-floating yellow black-text right pricetag">$${(productos[i].price/100)}</a></div>
-                    
-                </div>
-                <div class="row valign-wrapper piezas center">
-                    <div class="input-field col s5 push-s1">
-                    <input type="number" value="1" id="quantity" class="center">
-                    </div>
-                    <div class="col s4">
-                    <ul class=""><li><a href="#"><i class="material-icons">arrow_drop_up</i></a></li>
-                    <li><a href="#"><i class="material-icons">arrow_drop_down</i></a></li></ul>
-                    </div>
-                    <div class="col s3 pull-s2">
-                    <span class="">piezas</span></div>
-                </div>
-                    <div class="center"><button class="btn-small black-text orange shop-item-button">
-                        <a href="#"><i class="material-icons left">shopping_cart</i></a>
-                    <a class="black-text" href="#">Agregar</a>
-                    </button></div>
-            </div>
-        </div>`;};
-        for (i= 0; i < postres.length; i++) {
-            text1 += `
-        <div class="col s6 m4">
-            <div class="card">
-                <div class="card-image">
-                    <img src="Images/${postres[i].imgName}" alt="" class="responsive-img materialboxed" width=
-                    "50" data-caption="quesos">
-                    <span class="card-title">${postres[i].name}</span>
-                    <a href="#" class="btn-small btn-floating yellow black-text halfway-fab right">$${(postres[i].price/100)}</a>
-                </div> 
-                </div>
-                <div class="row valign-wrapper piezas center">
-                    <div class="input-field col s5 push-s1">
-                    <input type="number" value="1" id="quantity" class="center">
-                    </div>
-                    <div class="col s4">
-                    <ul class=""><li><a href="#"><i class="material-icons">arrow_drop_up</i></a></li>
-                    <li><a href="#"><i class="material-icons">arrow_drop_down</i></a></li></ul>
-                    </div>
-                    <div class="col s3 pull-s2">
-                    <span class="">piezas</span></div>
-                </div>
-                    <div class="center"><button class="btn-small black-text orange  shop-item-button">
-                        <a href="#"><i class="material-icons left">shopping_cart</i></a>
-                    <a class="black-text" href="#">Agregar</a>
-                    </button></div>
-            </div>
-        </div>`;}
-        document.getElementById("test1").innerHTML = text;
+        document.getElementById("test2").innerHTML = cardItems(postres);
+        document.getElementById("test3").innerHTML = cardItems(postres);
 
-        document.getElementById("test2").innerHTML = text;
-        document.getElementById("test3").innerHTML = text1;
+        let ups = document.getElementsByClassName('up');
+        let downs = document.getElementsByClassName('down');
+        let agregar = document.getElementsByClassName('shop-item-button');
+
+
+
+        function getinfo(event){
+            var clicked = event.target;
+            var id = clicked.id;
+            console.log(id);
+            var quantity = clicked.parentElement.parentElement.parentElement.parentElement.parentElement.getElementsByClassName('input-field')[0].children[0];
+            if (isNaN(quantity.value) || quantity.value < 0) {
+                quantity.value = 0
+            }
+            console.log(parseInt(quantity.value));
+            if (id === "up") {
+                quantity.value = parseInt(quantity.value) + 1;
+            } else{
+                quantity.value = parseInt(quantity.value) - 1;
+            }
+            
+            console.log(quantity.value);
+            updatequantity()
+        }
+
+        function updatequantity(){
+    
+        }
+
+        function check(agregar){
+            for (i= 0; i < agregar.length; i++) {
+            
+                agregar[i].addEventListener('click', getinfo)
+                };
+        }
+
+
+        document.addEventListener('DOMContentLoaded',
+        check(''));
+        document.addEventListener('DOMContentLoaded',
+        check(ups));
+        document.addEventListener('DOMContentLoaded',
+        check(downs));
+        document.addEventListener('DOMContentLoaded',
+        ()=>{
+            
+        });
+
 
         var elems = document.querySelectorAll('.materialboxed');
         var instances = M.Materialbox.init(elems);
@@ -83,6 +109,15 @@ if(document.readyState == 'loading') {
 } else {
     ready()
 }
+
+function quantityChanged(event) {
+    var input = event.target
+    if (isNaN(input.value) || input.value <= 0) {
+        input.value = 1
+    }
+    updatequantity()
+}
+
 
 function ready() {
 
@@ -119,14 +154,6 @@ function purchaseClicked() {
 function removeCartItem(event) {
     var buttonClicked = event.target 
     buttonClicked.parentElement.parentElement.remove()
-    updateCartTotal()
-}
-
-function quantityChanged(event) {
-    var input = event.target
-    if (isNaN(input.value) || input.value <= 0) {
-        input.value = 1
-    }
     updateCartTotal()
 }
 
@@ -185,3 +212,4 @@ function updateCartTotal() {
     total = Math.round(total * 100) / 100
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total + '.00'
 }
+

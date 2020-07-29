@@ -37,16 +37,8 @@ header {
     margin-bottom: 0px !important;
 }
 .entrega{
-    font-size: 2.2em;
-    position: relative;
-    bottom: 4.5rem;
-}
-
-.informacion{
-
-    position: relative;
-    top: 8rem;
-
+    font-size: 2em;
+    margin-bottom: 30% !important;
 }
 
 .menu{
@@ -232,12 +224,6 @@ header {
         height: 45vh !important;
     }
 
-}
-.back{
-    background-image: url("Images/5a.jpeg");
-    background-position: 60% -8em !important;
-    background-repeat: no-repeat;
-    background-size: cover !important; 
 }
 
 /* .carousel1{

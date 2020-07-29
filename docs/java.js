@@ -37,7 +37,7 @@
           };
           return obj;
         }
-console.log(names1.append(names2));
+
         const nombres1 = crearnombres(names1);
         const nombres2 = crearnombres(names2);
         const nombres = {...nombres1, ...nombres2};

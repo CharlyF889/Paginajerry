@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 text += `
             <div class="col s6 m4">
-                <div class="card">
+                <div id="${productos[i].id}" class="card">
                     <div class="card-image">
                         <img src="Images/${productos[i].imgName}" alt="" class="responsive-img materialboxed img" width=
                         "50" data-caption="${productos[i].name}">
@@ -26,11 +26,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="box">
                     <div class="row valign-wrapper piezas center">
                         <div class="input-field col s4 push-s2">
-                        <input type="number" id="quantity" class="center" value="1" min="1" max="100" required>
+                        <input type="number" id="quantity" class="center" value="1" min="1" max="50" required>
                         </div>
                         <div class="col s4">
-                        <ul class=""><li><a href="#!" type="button" class="up waves-effect waves-lighten"><i class="material-icons" id="up">arrow_drop_up</i></a></li>
-                        <li><a href="#!" class="down waves-effect waves-lighten"><i class="material-icons" id="down">arrow_drop_down</i></a></li></ul>
+                        <ul class=""><li><a href="#!" class="up waves-effect waves-lighten"><i id="up" class="material-icons">arrow_drop_up</i></a></li>
+                        <li><a href="#!" class="down waves-effect waves-lighten"><i id="down" class="material-icons">arrow_drop_down</i></a></li></ul>
                         </div>
                         <div class="col s3 pull-s2">
                         <span class="">&nbsp;piezas</span></div>
@@ -46,45 +46,42 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         document.getElementById("test1").innerHTML = cardItems(productos);
-
-        document.getElementById("test2").innerHTML = cardItems(postres);
+        document.getElementById("test2").innerHTML = cardItems('');
         document.getElementById("test3").innerHTML = cardItems(postres);
 
         let ups = document.getElementsByClassName('up');
         let downs = document.getElementsByClassName('down');
         let agregar = document.getElementsByClassName('shop-item-button');
 
-
-
-        function getinfo(event){
+        function changequantity(event){
             var clicked = event.target;
             var id = clicked.id;
-            console.log(id);
-            var quantity = clicked.parentElement.parentElement.parentElement.parentElement.parentElement.getElementsByClassName('input-field')[0].children[0];
-            if (isNaN(quantity.value) || quantity.value < 0) {
-                quantity.value = 0
-            }
-            console.log(parseInt(quantity.value));
+            var quantity = clicked.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.getElementsByClassName('input-field')[0].children[0];
+
             if (id === "up") {
                 quantity.value = parseInt(quantity.value) + 1;
             } else{
                 quantity.value = parseInt(quantity.value) - 1;
             }
-            
-            console.log(quantity.value);
-            updatequantity()
+            checkquantity(quantity);
         }
 
-        function updatequantity(){
-    
-        }
+        function checkquantity(quantity){
+            if (isNaN(quantity.value) || quantity.value < 0) {
+                quantity.value = 0
+        }};
 
         function check(agregar){
-            for (i= 0; i < agregar.length; i++) {
             
-                agregar[i].addEventListener('click', getinfo)
-                };
-        }
+            for (i= 0; i < agregar.length; i++) {
+
+                var quantity = agregar[i].parentElement.parentElement.parentElement.parentElement.parentElement.getElementsByClassName('input-field')[0].children[0];
+                agregar[i].addEventListener('click', changequantity);
+                quantity.addEventListener('change', (event)=>{
+                    if (isNaN(event.target.value) || event.target.value <= 0) {
+                        event.target.value = 1
+                    }
+        });}};
 
 
         document.addEventListener('DOMContentLoaded',

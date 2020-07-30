@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return resp.json();
     }).then(function(data) {
 
-        const {productos, postres} = data;
+        const {quesos, tortillas, platillos, postres} = data;
 
         function cardItems(productos){
             var text = "";
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <span class="">&nbsp;piezas</span></div>
                     </div></div>
                         <div class="center">
-                        <button type="button" class="btn-small black-text orange shop-item-button waves-effect waves-lighten">
+                        <button onclick="this.parentElement.parentElement.children[1].children[0].children[0].children[0].value = 0;" class="btn-small black-text orange shop-item-button waves-effect waves-lighten">
                             <i class="material-icons left">shopping_cart</i></a>
                             <a class="black-text" href="#!">Agregar</a>
                             </button></div>
@@ -45,9 +45,11 @@ document.addEventListener('DOMContentLoaded', function() {
             return text;
         }
         
-        document.getElementById("test1").innerHTML = cardItems(productos);
-        document.getElementById("test2").innerHTML = cardItems('');
-        document.getElementById("test3").innerHTML = cardItems(postres);
+        document.getElementById("test1").innerHTML = cardItems(quesos);
+        document.getElementById("test2").innerHTML = cardItems(tortillas);
+        document.getElementById("test3").innerHTML = cardItems(platillos);
+        document.getElementById("test4").innerHTML = cardItems(postres);
+        // document.getElementById("").innerHTML = ;
 
         const ups = document.getElementsByClassName('up');
         const downs = document.getElementsByClassName('down');
@@ -65,14 +67,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         function addtoCart(event){
-            var add = event.target;
-            console.log(add);
+
+
+            var added = event.target;
+            var cantidad = added.parentElement.parentElement.parentElement.children[1].children[0].children[0].children[0].value;
+            cantidad = 0;
+
+            // if (checkifadded == true){
+            //     alert('Producto ya agregado al Carrito')
+            // }
+
+            M.toast({html: 'Agregado al carrito.'});
         }
+
         function checkadd(agregar){
-
             for (i= 0; i < agregar.length; i++) {
-
-                agregar[i].addEventListener('click', addtoCart);
+                agregar[i].addEventListener('click', addtoCart, console.log(agregar[i]));
             }
         }
 

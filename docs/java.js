@@ -26,18 +26,18 @@
       fetch("./items.json").then(function(resp) {
           return resp.json();
       }).then(function(data) {
-        const data1 = data;
-        const {productos, postres} = data;
-        const names1 = productos.map(
-          function({name}) {
-            return name;
-          }
-        );
-        const names2 = postres.map(
-          function({name}) {
-            return name;
-          }
-        );
+        const {quesos, tortillas, platillos, postres} = data;
+
+        function mapear(productos){
+          let mapeo = productos.map(
+            function({name}) {
+              return name;})
+              return mapeo};
+
+        const names1 = mapear(quesos);
+        const names2 = mapear(tortillas);
+        const names3 = mapear(platillos);
+        const names4 = mapear(postres);
       
         function crearnombres(names){
         var i;
@@ -50,24 +50,38 @@
 
         const nombres1 = crearnombres(names1);
         const nombres2 = crearnombres(names2);
-        const nombres = {...nombres1, ...nombres2};
+        const nombres3 = crearnombres(names3);
+        const nombres4 = crearnombres(names4);
+        const nombres= {...nombres1, ...nombres2, ...nombres3, ...nombres4};
         const searchoptions = {
           data: nombres,
           onAutocomplete: function(texto){
 
             try{
-              var index = productos.find(producto => producto.name === texto).id;
+              var index = quesos.find(queso => queso.name === texto).id;
               var categoria = 0;
             } catch{
-              var index = postres.find(postre => postre.name === texto).id;
-              var categoria = 2;
+              try{
+                var index = tortillas.find(tortilla => postre.name === texto).id;
+                var categoria = 1;
+              } catch {
+                try {
+                  var index = platillos.find(postre => postre.name === texto).id;
+                  var categoria = 2;
+                } catch {
+                  var index = postres.find(postre => postre.name === texto).id;
+                  var categoria = 3;
+                }
+              }
             }
+
             var card = document.getElementById(index);
             var cardsection = card.parentElement.parentElement.parentElement.parentElement;
             var collap = cardsection.parentElement;
+            console.log(card);
 
             if (cardsection.classList.contains("active") == false){
-              // console.log('Estaba cerrado el indice: '+categoria);
+              console.log('Estaba cerrado el indice: '+categoria);
               var instance = M.Collapsible.getInstance(collap);
               instance.open(categoria);
             }
@@ -126,7 +140,7 @@
     document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('.tooltipped');
       var instances = M.Tooltip.init(elems);
-    });
+  });
   
     document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('.scrollspy');

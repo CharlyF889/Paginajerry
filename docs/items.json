@@ -1,54 +1,97 @@
 {
-    "productos": [
+    "quesos": [
         {
-            "id": "0",
+            "id": 0,
             "name": "Panela Natural 700g.",
-            "price": "8000",
+            "price": 8000,
             "imgName": "6a.jpeg"
         },
         {
-            "id": "1",
+            "id": 1,
             "name": "Panela Rajas 500g.",
-            "price": "6000",
+            "price": 6000,
             "imgName": "7a.jpeg"
         },
         {
-            "id": "2",
+            "id": 2,
             "name": "Oaxaca 500g.",
-            "price": "7000",
+            "price": 7000,
             "imgName": "5a.jpeg"
         },
         {
-            "id": "3",
+            "id": 3,
             "name": "Adobera de Fundir 1.2 Kg.",
-            "price": "11500",
+            "price": 11500,
             "imgName": "6a.jpeg"
         },
         {
-            "id": "4",
+            "id": 4,
             "name": "Cotija 500g.",
-            "price": "6000",
+            "price": 6000,
             "imgName": "7a.jpeg"
         },
         {
-            "id": "5",
+            "id": 5,
             "name": "Crema 500mL.",
-            "price": "3500",
+            "price": 3500,
             "imgName": "6a.jpeg"
         }
     ],
-    "postres": [
+    "tortillas": [
         {
-            "id": "6",
-            "name": "Pay de Queso",
-            "price": "12000",
-            "imgName": "1.png"
+            "id": 6,
+            "name": "Tortilla Natural",
+            "price": 2000,
+            "imgName": "1a.jpeg"
         },
         {
-            "id": "7",
+            "id": 7,
+            "name": "Tortilla Integral",
+            "price": 2000,
+            "imgName": "3a.jpeg"
+        },
+        {
+            "id": 8,
+            "name": "Tortilla Chipotle",
+            "price": 2000,
+            "imgName": "1a.jpeg"
+        },
+        {
+            "id": 9,
+            "name": "Tortilla Romero",
+            "price": 2000,
+            "imgName": "1a.jpeg"
+        } 
+    ],
+
+    "platillos": [
+        {
+            "id": 10,
+            "name": "Fajitas de Arrachera",
+            "price": 20000,
+            "imgName": "5a.jpeg"
+        },
+        {
+            "id": 11,
+            "name": "Paella",
+            "price": 18000,
+            "imgName": "5a.jpeg"
+        }
+
+    ],
+
+    "postres": [
+        {
+            "id": 12,
+            "name": "Pay de Queso",
+            "price": 12000,
+            "imgName": "2a.jpeg"
+        },
+        {
+            "id": 13,
             "name": "Brownies",
-            "price": "2000",
-            "imgName": "2.png"
+            "price": 2000,
+            "imgName": "2a.jpeg"
         }
     ]
 }

@@ -9,10 +9,20 @@
         document.getElementById('circulo').className = 'hide';
         document.getElementById('contenido').className = '';
       }
+    })
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+      const coll = document.querySelectorAll('.collapsible.expandable');
+      const instcoll = M.Collapsible.init(coll, {
+        accordion: false
+        }); 
     });
+
     
     document.addEventListener('DOMContentLoaded', function() {
 
+      
       fetch("./items.json").then(function(resp) {
           return resp.json();
       }).then(function(data) {
@@ -47,55 +57,33 @@
 
             try{
               var index = productos.find(producto => producto.name === texto).id;
+              var categoria = 0;
             } catch{
               var index = postres.find(postre => postre.name === texto).id;
+              var categoria = 2;
             }
             var card = document.getElementById(index);
             var cardsection = card.parentElement.parentElement.parentElement.parentElement;
-            console.log(card.parentElement.parentElement.parentElement)
+            var collap = cardsection.parentElement;
 
             if (cardsection.classList.contains("active") == false){
-              // cardsection.classList.add("active");
+              // console.log('Estaba cerrado el indice: '+categoria);
+              var instance = M.Collapsible.getInstance(collap);
+              instance.open(categoria);
             }
+            card.scrollIntoView(true);
 
-            console.log(card, cardsection);
-
-            card.scrollIntoView(false);
-
-            // var index = productos.find(producto => producto.name === texto).id;
-            // console.log(index);
-            // if (index === -1){
-            //   var index = postres.find(postre => postre.name === texto).id;
-            // }
-            //   console.log(index);
-          }
-
-
-          };
-
-        var elems = document.querySelectorAll('.collapsible');
-        var instances = M.Collapsible.init(elems, {
-        accordion: false
-        });
-
+          }};
 
         var options1 = searchoptions;
         var elems1 = document.querySelectorAll('.autocomplete');
         var instances = M.Autocomplete.init(elems1, options1);
-
+        
       })});
 
       document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.collapsible');
-        var instances = M.Collapsible.init(elems, {
-          accordion: false
-        });
-        
-      });
-
-      document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.slider');
-        var instances = M.Slider.init(elems);
+        var elems2 = document.querySelectorAll('.slider');
+        var instances = M.Slider.init(elems2);
       });
 
       document.addEventListener('DOMContentLoaded', function() {

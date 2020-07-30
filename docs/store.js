@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
             for (i= 0; i < productos.length; i++) {
                 
                 text += `
-            <div class="col s6 m4">
+            <div class="col s6 m3">
                 <div id="${productos[i].id}" class="card">
                     <div class="card-image">
                         <img src="Images/${productos[i].imgName}" alt="" class="responsive-img materialboxed img" width=
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <span class="">&nbsp;piezas</span></div>
                     </div></div>
                         <div class="center">
-                        <button type="button" class="btn-small black-text orange shop-item-button">
+                        <button type="button" class="btn-small black-text orange shop-item-button waves-effect waves-lighten">
                             <i class="material-icons left">shopping_cart</i></a>
                             <a class="black-text" href="#!">Agregar</a>
                             </button></div>
@@ -49,15 +49,37 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("test2").innerHTML = cardItems('');
         document.getElementById("test3").innerHTML = cardItems(postres);
 
-        let ups = document.getElementsByClassName('up');
-        let downs = document.getElementsByClassName('down');
-        let agregar = document.getElementsByClassName('shop-item-button');
+        const ups = document.getElementsByClassName('up');
+        const downs = document.getElementsByClassName('down');
+        const agregar = document.getElementsByClassName('shop-item-button');
+
+        document.addEventListener('DOMContentLoaded',
+        checkadd(agregar));
+        document.addEventListener('DOMContentLoaded',
+        check(ups));
+        document.addEventListener('DOMContentLoaded',
+        check(downs));
+        document.addEventListener('DOMContentLoaded',
+        ()=>{
+        
+        });
+
+        function addtoCart(event){
+            var add = event.target;
+            console.log(add);
+        }
+        function checkadd(agregar){
+
+            for (i= 0; i < agregar.length; i++) {
+
+                agregar[i].addEventListener('click', addtoCart);
+            }
+        }
 
         function changequantity(event){
             var clicked = event.target;
             var id = clicked.id;
             var quantity = clicked.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.getElementsByClassName('input-field')[0].children[0];
-
             if (id === "up") {
                 quantity.value = parseInt(quantity.value) + 1;
             } else{
@@ -71,35 +93,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 quantity.value = 0
         }};
 
-        function check(agregar){
+        function check(buttons){
             
-            for (i= 0; i < agregar.length; i++) {
+            for (i= 0; i < buttons.length; i++) {
 
-                var quantity = agregar[i].parentElement.parentElement.parentElement.parentElement.parentElement.getElementsByClassName('input-field')[0].children[0];
-                agregar[i].addEventListener('click', changequantity);
+                var quantity = buttons[i].parentElement.parentElement.parentElement.parentElement.parentElement.getElementsByClassName('input-field')[0].children[0];
+                buttons[i].addEventListener('click', changequantity);
                 quantity.addEventListener('change', (event)=>{
                     if (isNaN(event.target.value) || event.target.value <= 0) {
                         event.target.value = 1
                     }
         });}};
 
-
-        document.addEventListener('DOMContentLoaded',
-        check(''));
-        document.addEventListener('DOMContentLoaded',
-        check(ups));
-        document.addEventListener('DOMContentLoaded',
-        check(downs));
-        document.addEventListener('DOMContentLoaded',
-        ()=>{
-            
-        });
-
-
         var elems = document.querySelectorAll('.materialboxed');
         var instances = M.Materialbox.init(elems);
 
-})})
+})});
 
 if(document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)

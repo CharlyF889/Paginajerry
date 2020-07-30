@@ -30,7 +30,7 @@
                     class="waves-effect waves-teal orange-text flow-text">FINALIZAR COMPRA</a></li>
                     </ul>
 
-                    <ul class="right hide-on-med-and-down flow-text">
+                    <ul class="right hide-on-med-and-down flow-text desktopnav">
                         <li><a href="home.html" class="waves-effect waves-light orange-text flow-text">INICIAR SESIÓN</a></li>
                         <li><a href="providers.html" class="waves-effect waves-light orange-text flow-text">REGISTRARSE</a></li>
                         <li class=""><a href="index.html"
@@ -96,104 +96,108 @@
     </div>
 </div>
 
-    <div class="carousel carousel-slider carousel1">
-        <div class="carousel-fixed-item center">
-            <div class="orange-text text-lighten-3 entrega">Entregamos en la ZMG</div>
-            <a class="btn-small waves-effect white grey-text darken-text-2">Mas información</a>
-        </div>
-        <div class="carousel-item" href="#one!"><img src="Images/2a.jpeg"></div>
-        <div class="carousel-item" href="#two!">
-            <img src="Images/5a.jpeg">
-        </div>
-        <div class="carousel-item" href="#three!"><img src="Images/1a.jpeg"></div>
+<div class="carousel carousel-slider carousel1">
+    <div class="carousel-fixed-item center">
+        <div class="orange-text text-lighten-3 entrega">Entregamos en la ZMG</div>
+        <a class="btn-small waves-effect white grey-text darken-text-2">Mas información</a>
     </div>
-
-<div class="hide" id="contenido">
-    <div class="section1 section">
-        <div class="row row1">
-            <div class="input-field col s7 white">
-                <i class="material-icons prefix">search</i>
-                <input type="text" id="search" class="autocomplete search">
-                <label class="black-text" for="search">¿Buscas algo?</label>
-                <a href="#!" onclick="this.parentElement.getElementsByClassName('search')[0].value = ''" class="erase-search"><i class="material-icons prefix right">close</i></a>
-            </div>
+    <div class="carousel-item" href="#one!"><img src="Images/2a.jpeg"></div>
+    <div class="carousel-item" href="#two!">
+        <img src="Images/5a.jpeg">
+    </div>
+    <div class="carousel-item" href="#three!"><img src="Images/1a.jpeg"></div>
+</div>
+<div class="section1 section">
+    <div class="row row1">
+        <div class="input-field col s7 white">
+            <i class="material-icons prefix">search</i>
+            <input type="text" id="search" class="autocomplete search">
+            <label class="black-text" for="search">¿Buscas algo?</label>
+            <a href="#!" onclick="this.parentElement.getElementsByClassName('search')[0].value = ''" class="erase-search"><i class="material-icons prefix right">close</i></a>
         </div>
     </div>
+</div>
 
-    <!-- this.parentElement.getElementsById('search').value = '' -->
-    <h5 class="flow-text center">PRODUCTOS MAZAMITLA</h5>
+    <h5 class="center">PRODUCTOS MAZAMITLA</h5>
     <br>
-    <li class="divider" tabindex="-1"></li>
 
-    <ul class="collapsible expandible">
+    <ul class="collapsible expandable">
         <li class="active">
-        <div class="collapsible-header orange lighten-2 waves-effect"><i class="material-icons">expand_more</i>CREMERIA</div>
+        <div class="collapsible-header orange lighten-2 waves-effect"><i class="material-icons exp">expand_more</i>CREMERIA</div>
         <div class="collapsible-body">
             <div id="test1" class="row"></div></div>
         </li>
-        <li>
-        <div class="collapsible-header orange lighten-3 waves-effect"><i class="material-icons">expand_more</i>TORTILLAS</div>
+        <li class="">
+        <div class="collapsible-header orange lighten-3 waves-effect"><i class="material-icons exp">expand_more</i>TORTILLAS</div>
         <div class="collapsible-body">
             <div id="test2" class="row content-section"></div></div>
         </li>
-        <li>
-        <div class="collapsible-header orange lighten-4 waves-effect"><i class="material-icons">expand_more</i>POSTRES</div>
+        <li class="">
+        <div class="collapsible-header orange lighten-4 waves-effect"><i class="material-icons exp">expand_more</i>POSTRES</div>
         <div class="collapsible-body">
             <div id="test3" class="row content-section"></div></div>
         </li>
     </ul>
-    
-    <section class="container">
-        <div class="scrollspy" id="carrito">
-            <h2 class="carrito">CARRITO</h2>
-        </div>
 
-        <ul class="collection" id="carrito-foot">
-            <li class="collection-item avatar">
-            <img src="Images/1a.jpeg" alt="" class="circle">
-            <span class="title">Title</span>
-            <p>First Line <br>
-                Second Line
-            </p>
-            <a href="#!" class="secondary-content"><i class="material-icons">remove_shopping_cart</i></a>
-            </li>
+    <div class="hide" id="contenido">
+    
+        <br>
+        <div class="scrollspy center" id="carrito">
+            <h5 class="carrito">CARRITO</h5>
+        </div>
+        <br>
+
+
+    <ul class="collection" id="carrito-foot">
+        <li class="collection-item avatar">
+        <img src="Images/1a.jpeg" alt="" class="circle">
+        <span class="title">Title</span>
+        <p>First Line <br>
+            Second Line
+        </p>
+        <a href="#!" class="secondary-content"><i class="material-icons">remove_shopping_cart</i></a>
+        </li>
 
         <li class="collection-item avatar">
             <i class="material-icons circle">folder</i>
-            <span class="title">Title</span>
-        <div class="row valign-wrapper">
-            <div class="col s3">
-                <input type="number" value="1" id="quantity" class="center">
-            </div>
-            <div class="col s2 pull-s2">
-                <ul class=""><li><a href="#"><i class="material-icons">arrow_drop_up</i></a></li>
-                <li><a href="#"><i class="material-icons">arrow_drop_down</i></a></li></ul>
-            </div>
-            <span class="col s1 pull-s4">pzs</span>
-        
-            <div class="col s1">
-                <a href="#!" type="button" class=""><i class="material-icons red-text text-darken-2">delete</i></a>
+            <div class="row">
+                <div class="col s6">
+                    <span class="title">Panela Natural 700g.</span>
+                    <p>Queso</p>
+                </div>
+            <div class="col s5 secondary-content">
+                <div class="row valign-wrapper center">
+                    <div class="input-field col s4">
+                    <input type="number" id="quantity" class="center" value="1" min="1" max="50" required>
+                    </div>
+                    <div class="col s3">
+                    <ul class=""><li><a href="#!" class="up waves-effect waves-lighten"><i id="up" class="material-icons">arrow_drop_up</i></a></li>
+                    <li><a href="#!" class="down waves-effect waves-lighten"><i id="down" class="material-icons">arrow_drop_down</i></a></li></ul>
+                    </div>
+                    <div class="col s2">
+                    <span class="">pzs</span></div>
+                    <div class="col s2">
+                        <a href="#!" type="button" class=""><i class="material-icons teal-text text-darken-2">delete</i></a>
+                    </div>
+                </div>
             </div>
         </div>
         </li>
         </ul>
-
-        <div class="cart-row">
-            <span class="cart-header cart-column cart-item">Articulo</span>
-            <span class="cart-header cart-column cart-price">Precio</span>
-            <span class="cart-header cart-column cart-quantity">Cantidad</span>
-        </div>
-        <div class="cart-items">
-        </div>
-        <div class="cart-total">
-            <strong class="cart-total-title">Total</strong>
+        
+        <div class="center">
+            <strong>Total</strong>
             <span class="cart-total-price">$0.00</span>
         </div>
-        <button class="btn btn-primary btn-purchase" type="button" >FINALIZAR COMPRA</button>
-    
-    </section>
-    
-    
+
+        <br>
+        <li class="divider" tabindex="-1"></li>
+        <br>
+
+        <br>
+        <div class="center">
+            <button class="btn btn-primary btn-purchase" type="button" >FINALIZAR COMPRA</button>    
+        <br>
         <a href="#terms" class="btn-small orange modal-trigger">Terminos & Condiciones</a>
         <div class="modal" id="terms">
             <div class="modal-content">
@@ -205,6 +209,8 @@
                 </a>
             </div>
         </div>
+        </div>
+        <br>
     
         <div class="fixed-action-btn">
             <a class="btn-floating btn-large green">

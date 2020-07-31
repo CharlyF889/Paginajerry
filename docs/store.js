@@ -16,17 +16,17 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="col s6 m3">
                 <div id="${productos[i].id}" class="card">
                     <div class="card-image">
-                        <img src="Images/${productos[i].imgName}" alt="" class="responsive-img materialboxed img" width=
+                        <img src="Images/${productos[i].imgName}" alt="" class="responsive-img materialboxed item-img" width=
                         "50" data-caption="${productos[i].name}">
                         <div class="halfway-fab info">
-                        <span class="card-title left"><p class="flow-text white-text brown lighten-2">${productos[i].name}</p></span>
-                        <a href="#!" class="btn-small btn-floating yellow black-text right pricetag">$${(productos[i].price/100)}</a></div>
+                        <span class="card-title left"><p class="flow-text white-text brown lighten-2 item-title">${productos[i].name}</p></span>
+                        <a href="#!" class="btn-small btn-floating yellow black-text right item-price">$${(productos[i].price/100)}</a></div>
                         
                     </div>
                     <div class="box">
                     <div class="row valign-wrapper piezas center">
                         <div class="input-field col s4 push-s2">
-                        <input type="number" id="quantity" class="center" value="1" min="1" max="50" required>
+                        <input type="number" id="quantity item-quantity" class="center" value="1" min="1" max="50" required>
                         </div>
                         <div class="col s4">
                         <ul class=""><li><a href="#!" class="up waves-effect waves-lighten"><i id="up" class="material-icons">arrow_drop_up</i></a></li>
@@ -41,8 +41,101 @@ document.addEventListener('DOMContentLoaded', function() {
                             <a class="black-text" href="#!">Agregar</a>
                             </button></div>
                 </div>
-            </div>`;}
+            </div>`}
             return text;
+        }
+
+        function carritoItem(title, precio, imageSrc, quantityadded){
+            var rowcarrito = `
+            <li class="collection-item avatar">
+            <img class="circle cart-image" src="${imageSrc}" alt="">
+            <div class="row row1">
+                <div class="col s6">
+                    <span class="title">${title}</span>
+                    <br>
+                    <span class="title cart-price">$${precio}.00</span>
+                </div>
+            <div class="col s5 secondary-content">
+                <div class="row2 valign-wrapper center">
+                    <div class="input-field col s4 push-s1">
+                    <input type="number" id="quantity" class="center" value="${quantityadded}" min="1" max="50" required>
+                    </div>
+                    <div class="col s3">
+                    <ul class=""><li><a href="#!" class="up waves-effect waves-lighten"><i id="up" class="material-icons">arrow_drop_up</i></a></li>
+                    <li><a href="#!" class="down waves-effect waves-lighten"><i id="down" class="material-icons">arrow_drop_down</i></a></li></ul>
+                    </div>
+                    <div class="col s2 pull-s1">
+                    <span class="">pzs</span></div>
+                    <div class="col s1">
+                        <a href="#!" class=""><i class="material-icons teal-text text-darken-2">remove_shopping_cart</i></a>
+                    </div></div</div></div></li>`;
+
+            var i;
+            for (i= 0; i < productos.length; i++) {
+                
+                text += `
+                
+                `
+            }
+            return rowcarrito;
+        }
+        
+        function addtoCart(event){
+
+            var button = event.target;
+            var cantidad = button.parentElement.parentElement.parentElement.children[1].children[0].children[0].children[0].value;
+            var quantityadded = cantidad;
+            var title = button.parentElement.parentElement.parentElement.children[0].children[1].children[0].getElementsByClassName('item-title')[0].innerText;
+            var imageSrc = button.parentElement.parentElement.parentElement.children[0].children[0].getElementsByClassName('item-img')[0].src ;
+            var precio = button.parentElement.parentElement.parentElement.children[0].children[1].children[1].innerText;
+            
+            console.log(title, precio, imageSrc, quantityadded);
+            // carritoItem(title, precio, imageSrc);
+
+            // if (checkifadded == true){
+            //     alert('Producto ya agregado al Carrito')
+            // }
+
+            M.toast({html: 'Agregado al carrito.'});
+            cantidad = 0;
+        }
+        function addToCartClicked(event){
+            var button = event.target
+            var shopItem = button.parentElement.parentElement
+            var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
+            var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
+            var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
+            console.log(title, imageSrc)
+            addItemToCart(title, price, imageSrc)
+            updateCartTotal()
+        }
+        function addItemToCart(title, price, imageSrc){
+            var cartRow = document.createElement('div')
+            cartRow.classList.add('row')
+            var cartItems = document.getElementsByClassName('cart-items')[0]
+            var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+            for (var i =0; i < cartItemNames.length; i++) {
+                if (cartItemNames[i].innerText == title){
+                    alert('Ya seleccionaste ese producto.')
+                    return
+                }
+            }
+            var cartRowContents = `
+            <div class="cart-column cart-item">
+                <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
+                <span class="cart-item-title">${title}</span>
+            </div>
+            <span class="cart-column cart-price">${price}</span>
+            <div class="cart-column cart-quantity">
+                <input class="cart-quantity-input" type="number" value="1">
+                <button class="btn btn-danger" type="button">Remover</button>
+            </div>`
+            cartRow.innerHTML = cartRowContents
+            cartItems.append(cartRow)
+            cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
+            
+            cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
+            getElementsById('quantity').addEventListener('change',  )
         }
         
         document.getElementById("test1").innerHTML = cardItems(quesos);
@@ -66,23 +159,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         });
 
-        function addtoCart(event){
-
-
-            var added = event.target;
-            var cantidad = added.parentElement.parentElement.parentElement.children[1].children[0].children[0].children[0].value;
-            cantidad = 0;
-
-            // if (checkifadded == true){
-            //     alert('Producto ya agregado al Carrito')
-            // }
-
-            M.toast({html: 'Agregado al carrito.'});
-        }
-
         function checkadd(agregar){
             for (i= 0; i < agregar.length; i++) {
-                agregar[i].addEventListener('click', addtoCart, console.log(agregar[i]));
+                agregar[i].addEventListener('click', addtoCart);
             }
         }
 
@@ -171,46 +250,6 @@ function removeCartItem(event) {
     var buttonClicked = event.target 
     buttonClicked.parentElement.parentElement.remove()
     updateCartTotal()
-}
-
-function addToCartClicked(event){
-    var button = event.target
-    var shopItem = button.parentElement.parentElement
-    var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
-    var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
-    var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
-    console.log(title, imageSrc)
-    addItemToCart(title, price, imageSrc)
-    updateCartTotal()
-}
-
-function addItemToCart(title, price, imageSrc){
-    var cartRow = document.createElement('div')
-    cartRow.classList.add('row')
-    var cartItems = document.getElementsByClassName('cart-items')[0]
-    var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
-    for (var i =0; i < cartItemNames.length; i++) {
-        if (cartItemNames[i].innerText == title){
-            alert('Ya seleccionaste ese producto.')
-            return
-        }
-    }
-    var cartRowContents = `
-    <div class="cart-column cart-item">
-        <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
-        <span class="cart-item-title">${title}</span>
-    </div>
-    <span class="cart-column cart-price">${price}</span>
-    <div class="cart-column cart-quantity">
-        <input class="cart-quantity-input" type="number" value="1">
-        <button class="btn btn-danger" type="button">Remover</button>
-    </div>`
-    cartRow.innerHTML = cartRowContents
-    cartItems.append(cartRow)
-    cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
-    
-    cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
-    getElementsById('quantity').addEventListener('change',  )
 }
 
 function updateCartTotal() {

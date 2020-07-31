@@ -20,16 +20,8 @@
                 <div class="nav-wrapper valign-wrapper">
                     <a href="#!" class="brand-logo mainlogo">
                         <img class="circle responsive-img waves-effect waves-light z-depth-2 animate__animated animate__fadeInDown" src="Images/Logo Jerry.jpg"></a>
-                    <a href="#!" class="left menu1 dropdown-trigger" data-target="dropdown1">
+                    <a href="#!" class="left menu1 sidenav-trigger" data-target="slide-out">
                     <i class="material-icons menu">menu</i></a>
-                    <ul id="dropdown1" class='dropdown-content'>
-                    <li><a href="#!" class="waves-effect waves-light orange-text flow-text">INICIAR SESIÓN</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li><a href="#!" class="waves-effect waves-light orange-text flow-text">REGISTRARSE</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li><a href="#carrito"
-                    class="waves-effect waves-teal orange-text flow-text">FINALIZAR COMPRA</a></li>
-                    </ul>
 
                     <ul class="right hide-on-med-and-down flow-text desktopnav">
                         <li><a href="home.html" class="waves-effect waves-light orange-text flow-text">INICIAR SESIÓN</a></li>
@@ -42,11 +34,14 @@
                         <i class="material-icons cart-desktop">shopping_cart</i></a></li>
                         <li><span class="badge nav-badge white-text blue lighten-1 new">5</span></li>
                     </ul>
+                    <div class="navwrapper-carrito valign-wrapper">
+                        <a href="#modal1" id="cart" class=
+                        "btn-small btn-floating orange darken-1
+                        pulse show-on-med-and-down hide-on-large-only cart-mobile modal-trigger">
+                        <i class="material-icons cart1">shopping_cart</i></a>
+                        <span class="badge left navwrapper-badge orange-text white new">5</span> 
+                    </div>
                 </div>
-                <a href="#!" id="cart" class=
-                "btn-small btn-floating halfway-fab orange darken-1
-                pulse show-on-med-and-down hide-on-large-only cart-mobile right sidenav-trigger" data-target="slide-out">
-                <i class="material-icons  cart1 ">shopping_cart</i></a>
                 </div>
             </nav>
         </div>
@@ -54,23 +49,18 @@
         <ul id="slide-out" class="sidenav">
             <div class="user-view">
                 <a href="#!" class="sidenav-close">
-                <i class="material-icons">close</i>
-                <div class="center"></a>
+                <i class="material-icons">close</i></a>
+                <div class="center">
                     <img class="imgsidenav" src="Images/Logo Jerry.jpg">
                 </div>
             </div> 
-            <li><a class="subheader">Carrito</a></li>
-            <li><div class="divider" tabindex="-1"></div></li>
-            <div class="container valign-wrapper section">
-                <div class="center sidenav-cart">
-                    <a href="#!" class=
-                    "btn-large btn-floating orange darken-2 z-depth-2 sidenav-cart" >
-                    <i class="material-icons cart-mobile1">shopping_cart</i></a>
-                </div>
-                    <li><span class="badge sidenav-cart sidenav-badge white-text orange lighten-1 new">5</span></li>
-                    </div>
-                    <br>
-            </div>
+            <br>
+            <ul>
+                <li><a href="#!" class="waves-effect waves-light orange-text flow-text">INICIAR SESIÓN</a></li>
+                    <li><a href="#!" class="waves-effect waves-light orange-text flow-text">REGISTRARSE</a></li>
+                    <li><a href="#carrito"
+                    class="waves-effect waves-teal orange-text flow-text">FINALIZAR COMPRA</a></li>
+            </ul>
             <br>
             <li><a class="subheader">Productos</a></li>
             <li><div class="divider" tabindex="-1"></div></li>
@@ -96,9 +86,57 @@
     </div>
 </div>
 
+<div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">
+        <div class="modal-cart valign-wrapper">
+            <h4>Carrito&nbsp;&nbsp;&nbsp;</h4>
+            <a href="#!" class=
+            "btn-medium btn-floating orange darken-2 z-depth-2 modal-cart" >
+            <i class="material-icons cart-mobile1">shopping_cart</i></a>
+            <span class="badge modal-badge white-text orange lighten-1 new">5</span>
+            <a href="#!" class="modal-close">
+            <i class="material-icons">close</i></a>
+        </div>
+        <br>
+        <div class="divider" tabindex="-1"></div>
+        <br>
+        <ul class="collection carrito-collection" id="carrito-modal">
+            <li class="collection-item avatar">
+                <img class="circle cart-image" src="Images/2a.jpeg" alt="">
+                <div class="row row1">
+                    <div class="col s7">
+                        <span class="title">Panela Natural 700g.</span>
+                        <br>
+                        <span class="title cart-price">$10.00</span>
+                    </div>
+                <div class="col s5 secondary-content">
+                    <div class="row2 valign-wrapper center">
+                        <div class="input-field col s4 push-s1">
+                        <input type="number" id="quantity" class="center" value="1" min="1" max="50" required>
+                        </div>
+                        <div class="col s3">
+                        <ul class=""><li><a href="#!" class="up waves-effect waves-lighten"><i id="up" class="material-icons">arrow_drop_up</i></a></li>
+                        <li><a href="#!" class="down waves-effect waves-lighten"><i id="down" class="material-icons">arrow_drop_down</i></a></li></ul>
+                        </div>
+                        <div class="col s2 pull-s1">
+                        <span class="">pzs</span></div>
+                        <div class="col s1">
+                            <a href="#!" class=""><i class="material-icons teal-text text-darken-2">remove_shopping_cart</i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+    </div>
+</div>
+
 <div class="carousel carousel-slider carousel1">
     <div class="carousel-fixed-item center">
-        <div class="orange-text text-lighten-3 entrega">Entregamos en ZMG<br>
+        <div class="white-text entrega">Entregamos en ZMG <i class="fa fa-motorcycle orange-text"></i><br>
         Miercoles y Sabados</div>
         <a class="btn-small waves-effect white grey-text darken-text-2">Mas información</a>
     </div>
@@ -119,7 +157,7 @@
     </div>
 </div>
     <div class="center">
-        <h5 class="">PRODUCTOS MAZAMITLA</h5>
+        <h5 class="">PRODUCTOS MAZAMITLA&nbsp;&nbsp;<i class="fa fa-fire"></i></h5>
         <h7 class="">EMPACADO AL ALTO VACÍO</h7>
     </div>
 
@@ -143,11 +181,16 @@
             <div id="test2" class="row content-section"></div></div>
         </li>
         <li class="active">
-        <div class="collapsible-header orange lighten-3 waves-effect"><i class="material-icons exp">expand_less</i>PLATILLOS</div>
+        <div class="collapsible-header orange lighten-3 waves-effect"><i class="material-icons exp">expand_less</i>PLATILLOS<i class="right fa fa-cutlery"></i></div>
         <div class="collapsible-body">
             <br>
             <div class="center">
-                <h7 class="flow-text" style="font-size:large;">BANQUETES MODELO &reg;</h7>
+                <div>
+                    <h7 class="flow-text" style="font-size:large;">BANQUETES MODELO &reg;</h7>
+                </div>
+                <div>
+                    <h7 class="flow-text subheader" style="font-size:medium;">Platillos de 650g.</h7>
+                </div>
             </div>
             <div id="test3" class="row content-section"></div></div>
         </li>
@@ -167,12 +210,14 @@
         </div>
 
 
-    <ul class="collection" id="carrito-foot">
+    <ul class="collection carrito-collection" id="carrito-foot">
         <li class="collection-item avatar">
             <img class="circle cart-image" src="Images/2a.jpeg" alt="">
             <div class="row row1">
-                <div class="col s6">
-                    <span class="title">Panela Natural 700g.<br>$10.00</span>
+                <div class="col s7">
+                    <span class="title">Panela Natural 700g.</span>
+                    <br>
+                    <span class="title cart-price">$10.00</span>
                 </div>
             <div class="col s5 secondary-content">
                 <div class="row2 valign-wrapper center">
@@ -192,7 +237,7 @@
             </div>
         </div>
         </li>
-        </ul>
+    </ul>
         
         <div class="center">
             <strong>Total</strong>
